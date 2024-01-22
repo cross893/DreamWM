@@ -11,4 +11,4 @@ cp -r ~/.oh-my-zsh zsh/oh-my-zsh
 sudo cp /root/.p10k.zsh zsh/su.p10k.zsh
 sudo cp -r /root/.oh-my-zsh zsh/su.oh-my-zsh
 sudo chown -R user:user zsh
-#printevn | grep -i XDG_CURRENT_DESKTOP 
+#printenv | grep -i XDG_CURRENT_DESKTOP 
