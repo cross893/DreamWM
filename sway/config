@@ -1,0 +1,195 @@
+# Список открытых окон: swaymsg -t get_tree
+# Список устройств ввода: swaymsg -t get_inputs
+
+# Alias
+# Клавиша мод Mod1=Alt Mod4=Win
+set $mod Mod4
+# Дополнительные клавиши за вместо стрелок как в vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $term kitty
+set $menu dmenu_path | wofi | xargs swaymsg exec --
+
+# Хоткеи
+bindsym $mod+Return exec $term
+bindsym --to-code $mod+d exec $menu
+bindsym --to-code $mod+m exec kitty cmus
+bindsym --to-code $mod+e exec nemo
+
+bindsym --to-code $mod+Shift+q kill
+bindsym --to-code $mod+Shift+c reload
+bindsym --to-code $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym --to-code $mod+l exec 'swaylock -f -c 000000'
+
+# Scratchpad сворачивание и разворачивание окон
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+# Звук
+#bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+#bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-
+#bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+
+bindsym $mod+f1 exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym $mod+f2 exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-
+bindsym $mod+f3 exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+
+
+# Яркость
+#bindsym XF86MonBrightnessDown exec brightnessctl s -10%
+#bindsym XF86MonBrightnessUp exec brightnessctl s +10%
+bindsym $mod+f11 exec brightnessctl s 10%-
+bindsym $mod+f12 exec brightnessctl s 10%+
+
+# Перемещение окон
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Рабочее пространство
+# Перемещение по рабочим столам
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+# Перемещение окон по рабочим столам
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+# Отображение слоёв
+bindsym $mod+b splith
+bindsym $mod+v splitv
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+f fullscreen
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+
+# Модификации
+mode "resize" {
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym --to-code $mod+r mode "resize"
+
+# Input/Output конфигурация
+output * bg /usr/share/backgrounds/sway/Wallpaper/wallpaper5.jpg fill
+input * {
+    xkb_layout us,ru
+    xkb_options grp:alt_shift_toggle
+    repeat_delay 500
+    repeat_rate 50
+}
+input "2:14:ETPS/2_Elantech_Touchpad" {
+   dwt enabled
+   tap enabled
+   natural_scroll enabled
+   middle_emulation enabled
+}
+
+# Рамки
+#class			frame	bg	indicat	pr_frame
+client.focused		#fc0db0	#fd0de9	#ffffff	#2e9ef4
+client.focused_inactive	#333333	#5f676a	#ffffff	#484e50
+client.unfocused	#333333	#222222	#888888	#292d2e
+
+# Гапсы
+gaps inner 10
+gaps outer 4
+smart_gaps on
+
+# Загаловки окон
+default_border pixel
+for_window [tiling] border pixel 2
+
+# Окна без рамок
+smart_borders on
+
+# $mod+лкм=перемещение окон $mod+пкм=изменение размера окна
+floating_modifier $mod normal
+
+# Статус бар
+bar {
+    swaybar_command waybar
+#    position top
+#
+#    # When the status_command prints a new line to stdout, swaybar updates.
+#    # The default just shows the current date and time.
+#    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+#
+#    colors {
+#        statusline #ffffff
+#        background #323232
+#        inactive_workspace #32323200 #32323200 #5c5c5c
+#    }
+}
+
+# Отображение онон в плавающем режиме
+for_window [app_id="pavucontrol"] floating enable
+for_window [app_id="org.telegram.desktop"] floating enable
+for_window [class="KeePassXC"] floating enable
+for_window [title="Properties"] floating enable
+for_window [class="torbrowser-launcher"] floating enable
+for_window [class="Tor Browser"] floating enable
+for_window [class="ghidra"] floating enable
+for_window [app_id="nemo"] floating enable
+for_window [app_id="org.remmina.Remmina"] floating enable
+for_window [class="Conky"] floating enable
+for_window [class="Notepadqq"] floating enable
+for_window [app_id="org.kde.ark"] floating enable
+for_window [class="stegsolve-StegSolve"] floating enable
+for_window [app_id="audacity"] floating enable
+for_window [app_id="cmake-gui"] floating enable
+
+# Автостарт
+exec mako
+exec kitty --hold neofetch
+exec kitty
+
+#exec swayidle -w \ timeout 300 'swaylock -f -c 000000' \ timeout 600 'swaymsg "output * dpms off"' \ resume 'swaymsg "output * dpms on"' \ before-sleep 'swaylock -f -c 000000'
+
+exec swayidle -w \
+    timeout 300 'swaylock -f -c 000000' \
+    timeout 600 'swaymsg "output * dpms off"' \
+         resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -f -c 000000'
+
+include /etc/sway/config.d/*
