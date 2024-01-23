@@ -38,6 +38,10 @@ then
 elif (DESKTOP_SESSION=i3)
 then
   echo "This is a i3-wm"
+
+elif (XDG_SESSION_DESKTOP=KDE)
+then
+  echo "This is a KDE"
 fi
 
 yes | sudo pacman -S conky
