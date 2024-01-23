@@ -1,17 +1,34 @@
 #!/bin/bash
 
+yes | sudo pacman -S curl
+yes | sudo pacman -S git
+yes | sudo pacman -S man
+yes | sudo pacman -S ranger
+
+yes | sudo pacman -S chromium
+yes | sudo pacman -S nemo
+yes | sudo pacman -S gparted
+
 mkdir /home/$USER/.config
 
-yes | sudo pacman -S waybar
-mkdir /home/$USER/.config/waybar
-cp waybar/config /home/$USER/.config/waybar/config
-cp waybar/style.css /home/$USER/.config/waybar/style.css
-
-yes | sudo pacman -S wofi
-mkdir /home/$USER/.config/wofi
-cp wofi/config /home/$USER/.config/wofi/config
-cp wofi/style.css /home/$USER/.config/wofi/style.css
-
+if (XDG_SESSION_DESKTOP=sway)
+then
+  yes | sudo pacman -S htop
+  yes | sudo pacman -S cmus
+  
+  yes | sudo pacman -S waybar
+  mkdir /home/$USER/.config/waybar
+  cp waybar/config /home/$USER/.config/waybar/config
+  cp waybar/style.css /home/$USER/.config/waybar/style.css
+  
+  yes | sudo pacman -S wofi
+  mkdir /home/$USER/.config/wofi
+  cp wofi/config /home/$USER/.config/wofi/config
+  cp wofi/style.css /home/$USER/.config/wofi/style.css
+  
+  mkdir /home/$USER/.config/sway
+  cp sway/config /home/$USER/.config/sway/config
+fi
 yes | sudo pacman -S conky
 mkdir /home/$USER/.config/conky
 cp conky/conky.conf /home/$USER/.config/conky/conky.conf
@@ -19,9 +36,6 @@ cp conky/conky.conf /home/$USER/.config/conky/conky.conf
 yes | sudo pacman -S kitty
 mkdir /home/$USER/.config/kitty
 cp kitty/kitty.conf /home/$USER/.config/kitty/kitty.conf
-
-mkdir /home/$USER/.config/sway
-cp sway/config /home/$USER/.config/sway/config
 
 ### Fonts
 mkdir /home/$USER/.fonts
@@ -33,8 +47,6 @@ yes | sudo pacman -S ttf-arphic-uming ttf-arphic-ukai ttf-hannom adobe-source-ha
 yes | sudo pacman -S zsh
 chsh -s $(which zsh)
 sudo chsh -s $(which zsh)
-yes | sudo pacman -S curl
-yes | sudo pacman -S git
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sudo sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/$USER/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
@@ -45,10 +57,6 @@ cp zsh/zshrc /home/$USER/.zshrc
 sudo cp zsh/zshrc /root/.zshrc
 cp zsh/p10k.zsh /home/$USER/.p10k.zsh
 sudo cp zsh/su.p10k.zsh /root/.p10k.zsh
-
-yes | sudo pacman -S htop
-yes | sudo pacman -S cmus
-yes | sudo pacman -S ranger
 
 ### Install blackarch package
 curl -O https://blackarch.org/strap.sh
@@ -62,8 +70,3 @@ sudo pacman -Syyu --needed --overwrite='*' blackarch
 
 ### Install xfce
 #sudo pacman -S exo garcon thunar thunar-volman tumbler xfce4-appfinder xfce4-panel xfce4-power-manager xfce4-session xfce4-settings xfce4-terminal xfconf xfdesktop xfwm4 xfwm4-themes
-
-yes | sudo pacman -S chromium
-yes | sudo pacman -S man
-yes | sudo pacman -S nemo
-yes | sudo pacman -S gparted
