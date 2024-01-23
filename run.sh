@@ -13,6 +13,8 @@ mkdir /home/$USER/.config
 
 if (XDG_SESSION_DESKTOP=sway)
 then
+  echo "This is a SWAY"
+  
   yes | sudo pacman -S htop
   yes | sudo pacman -S cmus
   
@@ -28,6 +30,12 @@ then
   
   mkdir /home/$USER/.config/sway
   cp sway/config /home/$USER/.config/sway/config
+elif (DESKTOP_SESSION=awesome)
+then
+  echo "This is a AWESOME"
+elif (DESKTOP_SESSION=i3)
+then
+  echo "This is a i3-wm"
 fi
 yes | sudo pacman -S conky
 mkdir /home/$USER/.config/conky
