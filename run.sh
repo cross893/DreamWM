@@ -11,7 +11,7 @@ yes | sudo pacman -S gparted
 
 mkdir /home/$USER/.config
 
-if (XDG_SESSION_DESKTOP=sway)
+if [ "$XDG_SESSION_DESKTOP" = "sway" ]
 then
   echo "This is a SWAY"
   
@@ -31,15 +31,15 @@ then
   mkdir /home/$USER/.config/sway
   cp sway/config /home/$USER/.config/sway/config
 
-elif (DESKTOP_SESSION=awesome)
+elif [ "$DESKTOP_SESSION" = "awesome" ]
 then
   echo "This is a AWESOME"
 
-elif (DESKTOP_SESSION=i3)
+elif [ "$DESKTOP_SESSION" = "i3" ]
 then
   echo "This is a i3-wm"
 
-elif (XDG_SESSION_DESKTOP=KDE)
+elif [ "$XDG_SESSION_DESKTOP" = "KDE" ]
 then
   echo "This is a KDE"
 fi
