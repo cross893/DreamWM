@@ -2,7 +2,7 @@
 
 DISTRO=$(uname -n)
 
-if [ "DISTRO" = "archlinux" ]
+if [ "$DISTRO" = "archlinux" ]
 then
   yes | sudo pacman -S curl
   yes | sudo pacman -S git
@@ -85,7 +85,7 @@ then
   sudo pacman -Syu
   sudo pacman -Syyu --needed --overwrite='*' blackarch
   
-elif [ "DISTRO" = "debian" ]
+elif [ "$DISTRO" = "debian" ]
 then
   echo "Debian in developing"
   
