@@ -31,10 +31,8 @@ sudo cp fonts/JetBrainsMonoNerdFontMono-Regular.ttf /root/.fonts/
 sudo pacman -S ttf-arphic-uming ttf-arphic-ukai ttf-hannom adobe-source-han-sans-cn-fonts adobe-source-han-sans-kr-fonts ttf-hanazono
 
 sudo pacman -S zsh
-chsh -s /bin/zsh
-chsh -s /usr/bin/zsh
-sudo chsh -s /bin/zsh
-sudo chsh -s /usr/bin/zsh
+chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
 sudo pacman -S curl
 sudo pacman -S git
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
