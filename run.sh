@@ -30,13 +30,16 @@ then
   
   mkdir /home/$USER/.config/sway
   cp sway/config /home/$USER/.config/sway/config
+
 elif (DESKTOP_SESSION=awesome)
 then
   echo "This is a AWESOME"
+
 elif (DESKTOP_SESSION=i3)
 then
   echo "This is a i3-wm"
 fi
+
 yes | sudo pacman -S conky
 mkdir /home/$USER/.config/conky
 cp conky/conky.conf /home/$USER/.config/conky/conky.conf
@@ -52,6 +55,7 @@ sudo mkdir /root/.fonts
 sudo cp fonts/JetBrainsMonoNerdFontMono-Regular.ttf /root/.fonts/
 yes | sudo pacman -S ttf-arphic-uming ttf-arphic-ukai ttf-hannom adobe-source-han-sans-cn-fonts adobe-source-han-sans-kr-fonts ttf-hanazono
 
+### ZSH
 yes | sudo pacman -S zsh
 chsh -s $(which zsh)
 sudo chsh -s $(which zsh)
