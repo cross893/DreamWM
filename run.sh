@@ -17,8 +17,6 @@ then
   
   if [ "$XDG_SESSION_DESKTOP" = "sway" ]
   then
-    echo "This is a SWAY"
-    
     yes | sudo pacman -S htop
     yes | sudo pacman -S cmus
     
