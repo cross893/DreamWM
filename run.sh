@@ -1,9 +1,11 @@
 #!/bin/bash
 
-DISTRO=$(uname -n)
-
-if [ "$DISTRO" = "archlinux" ]
+if [ "$(uname -n)" = "archlinux" ]
 then
+  while ! [ "$answ_ba" = "y" -o "$answ_ba" = "n" ]
+  do
+    read -p "Do you wanna install blackarch packages? (y/n) " answ_ba
+  done
   yes | sudo pacman -S curl
   yes | sudo pacman -S git
   yes | sudo pacman -S man
@@ -77,13 +79,16 @@ then
   sudo cp zsh/su.p10k.zsh /root/.p10k.zsh
   
   ### Install blackarch package
-  curl -O https://blackarch.org/strap.sh
-  chmod +x strap.sh
-  sudo ./strap.sh
-  sudo pacman -Syu
-  sudo pacman -Syyu --needed --overwrite='*' blackarch
+  if [ "$answ_ba" = "y" ]
+  then
+    curl -O https://blackarch.org/strap.sh
+    chmod +x strap.sh
+    sudo ./strap.sh
+    sudo pacman -Syu
+    sudo pacman -Syyu --needed --overwrite='*' blackarch
+  fi
   
-elif [ "$DISTRO" = "debian" ]
+elif [ "$(uname -n)" = "debian" ]
 then
   echo "Debian in developing"
   
