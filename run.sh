@@ -8,7 +8,7 @@ then
   done
   yes | sudo pacman -S curl
   yes | sudo pacman -S git
-  yes | sudo pacman -S man
+  echo "1\ny" | sudo pacman -S man
   yes | sudo pacman -S ranger
   
   yes | sudo pacman -S chromium
