@@ -6,10 +6,11 @@ then
 	### Arch
 	if [ "$(uname -n)" = "archlinux" ]
 	then
-  
- 		while ! [ "$swayinstall" = "y" -o "$swayinstall" = "n" ]
+  		wminstall=-1
+ 		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 1 ]
 		do
-			read -p "Do you wanna install sway? (y/n) " swayinstall
+  			echo "Do you wanna install WM?"
+			read -p "sway - 1, " wminstall
 		done
   
 		while ! [ "$blackarchpack" = "y" -o "$blackarchpack" = "n" ]
@@ -25,14 +26,14 @@ then
 		yes | sudo pacman -S chromium
 		yes | sudo pacman -S gparted
 
-		if [ "$swayinstall" = "y" ]
+		if [ "$wminstall" = "1" ]
 		then
 			yes | sudo pacman -S sway
 		fi
 		
 		mkdir /home/$USER/.config
 	 	
-		if [ "$XDG_SESSION_DESKTOP" = "sway" -o "$swayinstall" = "y" ]
+		if [ "$XDG_SESSION_DESKTOP" = "sway" -o "$wminstall" = "1" ]
 		then
 			yes | sudo pacman -S htop
 			yes | sudo pacman -S cmus
@@ -110,9 +111,11 @@ then
 	then
 		echo "Debian in developing"
   
- 		while ! [ "$swayinstall" = "y" -o "$swayinstall" = "n" ]
+ 		wminstall=-1
+ 		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 1 ]
 		do
-			read -p "Do you wanna install sway? (y/n) " swayinstall
+  			echo "Do you wanna install WM?"
+			read -p "sway - 1, " wminstall
 		done
 		
 		while ! [ "$kalitools" = "y" -o "$kalitools" = "n" ]
@@ -128,14 +131,14 @@ then
 		sudo apt-get install chromium -y
 		sudo apt-get install gparted -y
 
-		if [ "$swayinstall" = "y" ]
+		if [ "$wminstall" = "1" ]
   		then
     			sudo apt-get install sway -y
        		fi
 
 		mkdir /home/$USER/.config
    
-		if [ "$XDG_SESSION_DESKTOP" = "sway" -o  "$swayinstall" = "y" ]
+		if [ "$XDG_SESSION_DESKTOP" = "sway" -o  "$wminstall" = "1" ]
 		then
 			echo "This is a SWAY in developing"
 		
