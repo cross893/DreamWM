@@ -6,6 +6,12 @@ then
 	### Arch
 	if [ "$(uname -n)" = "archlinux" ]
 	then
+  
+ 		while ! [ "$swayinstall" = "y" -o "$swayinstall" = "n" ]
+		do
+			read -p "Do you wanna install sway? (y/n) " swayinstall
+		done
+  
 		while ! [ "$blackarchpack" = "y" -o "$blackarchpack" = "n" ]
 		do
 			read -p "Do you wanna install blackarch packages? (y/n) " blackarchpack
@@ -18,10 +24,15 @@ then
 	 	
 		yes | sudo pacman -S chromium
 		yes | sudo pacman -S gparted
+
+		if [ "$swayinstall" = "y" ]
+		then
+			yes | sudo pacman -S sway
+		fi
 		
 		mkdir /home/$USER/.config
 	 	
-		if [ "$XDG_SESSION_DESKTOP" = "sway" ]
+		if [ "$XDG_SESSION_DESKTOP" = "sway" -o "$swayinstall" = "y" ]
 		then
 			yes | sudo pacman -S htop
 			yes | sudo pacman -S cmus
@@ -98,6 +109,11 @@ then
 	elif [ "$(uname -n)" = "debian" ]
 	then
 		echo "Debian in developing"
+  
+ 		while ! [ "$swayinstall" = "y" -o "$swayinstall" = "n" ]
+		do
+			read -p "Do you wanna install sway? (y/n) " swayinstall
+		done
 		
 		while ! [ "$kalitools" = "y" -o "$kalitools" = "n" ]
 		do
@@ -111,8 +127,15 @@ then
 	 
 		sudo apt-get install chromium -y
 		sudo apt-get install gparted -y
-	 
-		if [ "$XDG_SESSION_DESKTOP" = "sway" ]
+
+		if [ "$swayinstall" = "y" ]
+  		then
+    			sudo apt-get install sway -y
+       		fi
+
+		mkdir /home/$USER/.config
+   
+		if [ "$XDG_SESSION_DESKTOP" = "sway" -o  "$swayinstall" = "y" ]
 		then
 			echo "This is a SWAY in developing"
 		
