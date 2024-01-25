@@ -10,7 +10,7 @@ then
  		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 1 ]
 		do
   			echo "Do you wanna install WM?"
-			read -p "sway - 1, " wminstall
+			read -p "sway - 1, nothing - 0 " wminstall
 		done
   
 		while ! [ "$blackarchpack" = "y" -o "$blackarchpack" = "n" ]
@@ -54,15 +54,19 @@ then
 			
 		elif [ "$DESKTOP_SESSION" = "awesome" ]
 		then
-			echo "This is a AWESOME in developing"
+			echo "This is a AWESOME in developing" #---------------------------------------------------------------------------------------------------------------------------------
 			
 		elif [ "$DESKTOP_SESSION" = "i3" ]
 		then
-			echo "This is a i3-wm in developing"
+			echo "This is a i3-wm in developing" #---------------------------------------------------------------------------------------------------------------------------------
 			
 		elif [ "$XDG_SESSION_DESKTOP" = "KDE" ]
 		then
-			echo "This is a KDE in developing"
+			echo "This is a KDE in developing" #---------------------------------------------------------------------------------------------------------------------------------
+		
+		elif [ "$XDG_CURRENT_DESKTOP" = "XFCE" ]
+		then
+			echo "This is a XFCE in developing" #---------------------------------------------------------------------------------------------------------------------------------
 		fi
 	  
 		yes | sudo pacman -S conky
@@ -115,7 +119,7 @@ then
  		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 1 ]
 		do
   			echo "Do you wanna install WM?"
-			read -p "sway - 1, " wminstall
+			read -p "sway - 1, nothing - 0 " wminstall
 		done
 		
 		while ! [ "$kalitools" = "y" -o "$kalitools" = "n" ]
@@ -140,19 +144,23 @@ then
    
 		if [ "$XDG_SESSION_DESKTOP" = "sway" -o  "$wminstall" = "1" ]
 		then
-			echo "This is a SWAY in developing"
+			echo "This is a SWAY in developing" #---------------------------------------------------------------------------------------------------------------------------------
 		
 		elif [ "$DESKTOP_SESSION" = "awesome" ]
 		then
-			echo "This is a AWESOME in developing"
+			echo "This is a AWESOME in developing" #---------------------------------------------------------------------------------------------------------------------------------
 	  
 		elif [ "$DESKTOP_SESSION" = "i3" ]
 		then
-			echo "This is a i3-wm in developing"
+			echo "This is a i3-wm in developing" #---------------------------------------------------------------------------------------------------------------------------------
 	  
 		elif [ "$XDG_SESSION_DESKTOP" = "KDE" ]
 		then
-			echo "This is a KDE in developing"
+			echo "This is a KDE in developing" #---------------------------------------------------------------------------------------------------------------------------------
+		
+  		elif [ "$XDG_CURRENT_DESKTOP" = "XFCE" ]
+		then
+			echo "This is a XFCE in developing" #---------------------------------------------------------------------------------------------------------------------------------
 		fi
   		
     		### Fonts
@@ -179,7 +187,7 @@ then
 		### Install kali linux tools
 		if [ "$kalitools" = "y" ]
 		then
-			echo "This is a kali linux tools in developing"
+			echo "This is a kali linux tools in developing" #---------------------------------------------------------------------------------------------------------------------------------
 		fi
 	fi
 else
