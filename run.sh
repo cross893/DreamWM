@@ -128,6 +128,12 @@ then
 		then
 			echo "This is a KDE in developing"
 		fi
+  		
+    		### Fonts
+		mkdir /home/$USER/.fonts
+		cp fonts/JetBrainsMonoNerdFontMono-Regular.ttf /home/$USER/.fonts/
+		sudo mkdir /root/.fonts
+		sudo cp fonts/JetBrainsMonoNerdFontMono-Regular.ttf /root/.fonts/
 	  
 		### ZSH
 		sudo apt-get install zsh -y
@@ -151,5 +157,5 @@ then
 		fi
 	fi
 else
-	echo "sorry, you user not run sudo"
+	echo "Add you user in sudoers group"
 fi
