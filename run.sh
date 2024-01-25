@@ -2,9 +2,9 @@
 
 if [ "$(uname -n)" = "archlinux" ]
 then
-  while ! [ "$answ_ba" = "y" -o "$answ_ba" = "n" ]
+  while ! [ "$blackarchpack" = "y" -o "$blackarchpack" = "n" ]
   do
-    read -p "Do you wanna install blackarch packages? (y/n) " answ_ba
+    read -p "Do you wanna install blackarch packages? (y/n) " blackarchpack
   done
   yes | sudo pacman -S curl
   yes | sudo pacman -S git
@@ -79,7 +79,7 @@ then
   sudo cp zsh/su.p10k.zsh /root/.p10k.zsh
   
   ### Install blackarch package
-  if [ "$answ_ba" = "y" ]
+  if [ "$blackarchpack" = "y" ]
   then
     curl -O https://blackarch.org/strap.sh
     chmod +x strap.sh
@@ -92,6 +92,10 @@ elif [ "$(uname -n)" = "debian" ]
 then
   echo "Debian in developing"
   
+  while ! [ "$kalitools" = "y" -o "$kalitools" = "n" ]
+  do
+    read -p "Do you wanna install kali linux tools? (y/n) " kalitools
+  done
   if [ "$XDG_SESSION_DESKTOP" = "sway" ]
   then
     echo "This is a SWAY in developing"
@@ -107,5 +111,11 @@ then
   elif [ "$XDG_SESSION_DESKTOP" = "KDE" ]
   then
     echo "This is a KDE in developing"
+  fi
+  
+  ### Install kali linux tools
+  if [ "$kalitools" = "y" ]
+  then
+    echo "This is a kali linux tools in developing"
   fi
 fi
