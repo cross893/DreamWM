@@ -101,6 +101,7 @@ then
 	do
 		read -p "Do you wanna install kali linux tools? (y/n) " kalitools
 	done
+ 
 	if [ "$XDG_SESSION_DESKTOP" = "sway" ]
 	then
 		echo "This is a SWAY in developing"
@@ -118,6 +119,21 @@ then
 		echo "This is a KDE in developing"
 	fi
   
+	### ZSH
+	sudo apt-get install zsh -y
+	chsh -s $(which zsh)
+	sudo chsh -s $(which zsh)
+	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	sudo sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/$USER/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+	sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /root/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+	git clone https://github.com/romkatv/powerlevel10k.git /home/$USER/.oh-my-zsh/custom/themes/powerlevel10k
+	sudo git clone https://github.com/romkatv/powerlevel10k.git /root/.oh-my-zsh/custom/themes/powerlevel10k
+	cp zsh/zshrc /home/$USER/.zshrc
+	sudo cp zsh/zshrc /root/.zshrc
+	cp zsh/p10k.zsh /home/$USER/.p10k.zsh
+	sudo cp zsh/su.p10k.zsh /root/.p10k.zsh
+ 
 	### Install kali linux tools
 	if [ "$kalitools" = "y" ]
 	then
