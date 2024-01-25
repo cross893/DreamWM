@@ -1,9 +1,7 @@
 #!/bin/bash
 
-if [ "$(sudo -v)" != "" ]
+if sudo -v
 then
-	echo "sorry, you user not run sudo"
-else
 
 	### Arch
 	if [ "$(uname -n)" = "archlinux" ]
@@ -152,4 +150,6 @@ else
 			echo "This is a kali linux tools in developing"
 		fi
 	fi
+else
+	echo "sorry, you user not run sudo"
 fi
