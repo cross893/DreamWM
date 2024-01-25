@@ -15,7 +15,6 @@ then
 	yes | sudo pacman -S ranger
  	
 	yes | sudo pacman -S chromium
-	yes | sudo pacman -S nemo
 	yes | sudo pacman -S gparted
 	
 	mkdir /home/$USER/.config
@@ -24,6 +23,7 @@ then
 	then
 		yes | sudo pacman -S htop
 		yes | sudo pacman -S cmus
+		yes | sudo pacman -S nemo
 		
 		yes | sudo pacman -S waybar
 		mkdir /home/$USER/.config/waybar
@@ -101,6 +101,14 @@ then
 	do
 		read -p "Do you wanna install kali linux tools? (y/n) " kalitools
 	done
+ 	
+	sudo apt-get install curl -y
+	sudo apt-get install git -y
+	sudo apt-get install man -y
+	sudo apt-get install ranger -y
+ 
+	sudo apt-get install chromium -y
+	sudo apt-get install gparted -y
  
 	if [ "$XDG_SESSION_DESKTOP" = "sway" ]
 	then
