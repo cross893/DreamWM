@@ -144,7 +144,22 @@ then
    
 		if [ "$XDG_SESSION_DESKTOP" = "sway" -o  "$wminstall" = "1" ]
 		then
-			echo "This is a SWAY in developing" #---------------------------------------------------------------------------------------------------------------------------------
+			sudo apt-get install htop -y
+			sudo apt-get install cmus -y
+			sudo apt-get install nemo -y
+			
+			sudo apt-get install waybar -y
+			mkdir /home/$USER/.config/waybar
+			cp waybar/config /home/$USER/.config/waybar/config
+			cp waybar/style.css /home/$USER/.config/waybar/style.css
+			
+			sudo apt-get install wofi -y
+			mkdir /home/$USER/.config/wofi
+			cp wofi/config /home/$USER/.config/wofi/config
+			cp wofi/style.css /home/$USER/.config/wofi/style.css
+			
+			mkdir /home/$USER/.config/sway
+			cp sway/config /home/$USER/.config/sway/config
 		
 		elif [ "$DESKTOP_SESSION" = "awesome" ]
 		then
@@ -162,6 +177,14 @@ then
 		then
 			echo "This is a XFCE in developing" #---------------------------------------------------------------------------------------------------------------------------------
 		fi
+	  
+		sudo apt-get install conky -y
+		mkdir /home/$USER/.config/conky
+		cp conky/conky.conf /home/$USER/.config/conky/conky.conf
+		
+		sudo apt-get install kitty -y
+		mkdir /home/$USER/.config/kitty
+		cp kitty/kitty.conf /home/$USER/.config/kitty/kitty.conf
   		
     		### Fonts
 		mkdir /home/$USER/.fonts
