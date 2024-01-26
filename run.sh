@@ -26,24 +26,27 @@ then
 		yes | sudo pacman -S chromium
 		yes | sudo pacman -S gparted
 
-		if [ "$wminstall" = "1" ]
+		if [ "$wminstall" = "1" ] #---------------------------------------------------------------------------------------------------------------------------------
 		then
 			yes | sudo pacman -S sway
+			yes | sudo pacman -S swaylock
+			yes | sudo pacman -S swayidle
+			yes | sudo pacman -S swaybg
    
-		elif [ "$wminstall" = "2" ]
+		elif [ "$wminstall" = "2" ] #---------------------------------------------------------------------------------------------------------------------------------
 		then
 			yes | sudo pacman -S awesome
    
-		elif [ "$wminstall" = "3" ]
+		elif [ "$wminstall" = "3" ] #---------------------------------------------------------------------------------------------------------------------------------
 		then
 			yes | sudo pacman -S i3-wm
    
-		elif [ "$wminstall" = "4" ]
+		elif [ "$wminstall" = "4" ] #---------------------------------------------------------------------------------------------------------------------------------
 		then
   			echo "This is a DWM in developing"
 			#sudo pacman -S xorg
    
-		elif [ "$wminstall" = "5" ]
+		elif [ "$wminstall" = "5" ] #---------------------------------------------------------------------------------------------------------------------------------
 		then
 			yes | sudo pacman -S hyprland
 		fi
@@ -160,19 +163,22 @@ then
 		sudo apt-get install chromium -y
 		sudo apt-get install gparted -y
 
-		if [ "$wminstall" = "1" ]
+		if [ "$wminstall" = "1" ] #---------------------------------------------------------------------------------------------------------------------------------
   		then
     			sudo apt-get install sway -y
+    			sudo apt-get install swaylock -y
+    			sudo apt-get install swayidle -y
+    			sudo apt-get install swaybg -y
        
-       		elif [ "$wminstall" = "2" ]
+       		elif [ "$wminstall" = "2" ] #---------------------------------------------------------------------------------------------------------------------------------
   		then
     			sudo apt-get install awesome-extra -y
        
-       		elif [ "$wminstall" = "3" ]
+       		elif [ "$wminstall" = "3" ] #---------------------------------------------------------------------------------------------------------------------------------
   		then
     			sudo apt-get install i3 -y
        
-       		elif [ "$wminstall" = "4" ]
+       		elif [ "$wminstall" = "4" ] #---------------------------------------------------------------------------------------------------------------------------------
   		then
     			sudo apt-get install dwm suckless-tools -y
        		fi
