@@ -38,6 +38,10 @@ then
 		then
 			yes | sudo pacman -S i3-wm
    
+		elif [ "$wminstall" = "4" ]
+		then
+			#sudo pacman -S xorg
+   
 		elif [ "$wminstall" = "5" ]
 		then
 			yes | sudo pacman -S hyprland
