@@ -10,7 +10,7 @@ then
  		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 1 ]
 		do
   			echo "Do you wanna install WM?"
-			read -p "sway - 1, nothing - 0 " wminstall
+			read -p "sway - 1, nothing - 0: " wminstall
 		done
   
 		while ! [ "$blackarchpack" = "y" -o "$blackarchpack" = "n" ]
@@ -119,7 +119,7 @@ then
  		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 1 ]
 		do
   			echo "Do you wanna install WM?"
-			read -p "sway - 1, nothing - 0 " wminstall
+			read -p "sway - 1, nothing - 0: " wminstall
 		done
 		
 		while ! [ "$kalitools" = "y" -o "$kalitools" = "n" ]
