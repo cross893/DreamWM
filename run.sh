@@ -40,6 +40,7 @@ then
    
 		elif [ "$wminstall" = "4" ]
 		then
+  			echo "This is a DWM in developing"
 			#sudo pacman -S xorg
    
 		elif [ "$wminstall" = "5" ]
