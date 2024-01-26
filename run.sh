@@ -7,10 +7,10 @@ then
 	if [ "$(uname -n)" = "archlinux" ]
 	then
   		wminstall=-1
- 		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 1 ]
+ 		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 3 ]
 		do
   			echo "Do you wanna install WM?"
-			read -p "sway - 1, nothing - 0: " wminstall
+			read -p "sway - 1, awesome - 2, i3-wm - 3, nothing - 0: " wminstall
 		done
   
 		while ! [ "$blackarchpack" = "y" -o "$blackarchpack" = "n" ]
@@ -29,6 +29,14 @@ then
 		if [ "$wminstall" = "1" ]
 		then
 			yes | sudo pacman -S sway
+   
+		elif [ "$wminstall" = "2" ]
+		then
+			yes | sudo pacman -S awesome
+   
+		elif [ "$wminstall" = "3" ]
+		then
+			yes | sudo pacman -S i3-wm
 		fi
 		
 		mkdir /home/$USER/.config
@@ -52,19 +60,27 @@ then
 			mkdir /home/$USER/.config/sway
 			cp sway/config /home/$USER/.config/sway/config
 			
-		elif [ "$DESKTOP_SESSION" = "awesome" ]
+		elif [ "$DESKTOP_SESSION" = "awesome" -o  "$wminstall" = "2" ]
 		then
 			echo "This is a AWESOME in developing" #---------------------------------------------------------------------------------------------------------------------------------
 			
-		elif [ "$DESKTOP_SESSION" = "i3" ]
+		elif [ "$DESKTOP_SESSION" = "i3" -o  "$wminstall" = "3" ]
 		then
 			echo "This is a i3-wm in developing" #---------------------------------------------------------------------------------------------------------------------------------
 			
-		elif [ "$XDG_SESSION_DESKTOP" = "KDE" ]
+		elif [ "$DESKTOP_SESSION" = "DWM" -o  "$wminstall" = "4" ]
+		then
+			echo "This is a DWM in developing" #---------------------------------------------------------------------------------------------------------------------------------
+			
+		elif [ "$DESKTOP_SESSION" = "hyperland" -o  "$wminstall" = "5" ]
+		then
+			echo "This is a hyperland in developing" #---------------------------------------------------------------------------------------------------------------------------------
+			
+		elif [ "$XDG_SESSION_DESKTOP" = "KDE" -o  "$wminstall" = "6" ]
 		then
 			echo "This is a KDE in developing" #---------------------------------------------------------------------------------------------------------------------------------
 		
-		elif [ "$XDG_CURRENT_DESKTOP" = "XFCE" ]
+		elif [ "$XDG_CURRENT_DESKTOP" = "XFCE" -o  "$wminstall" = "7" ]
 		then
 			echo "This is a XFCE in developing" #---------------------------------------------------------------------------------------------------------------------------------
 		fi
@@ -116,10 +132,10 @@ then
 		echo "Debian in developing"
   
  		wminstall=-1
- 		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 1 ]
+ 		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 4 ]
 		do
   			echo "Do you wanna install WM?"
-			read -p "sway - 1, nothing - 0: " wminstall
+			read -p "sway - 1, awesome - 2, i3-wm - 3, dwm - 4, nothing - 0: " wminstall
 		done
 		
 		while ! [ "$kalitools" = "y" -o "$kalitools" = "n" ]
@@ -138,6 +154,18 @@ then
 		if [ "$wminstall" = "1" ]
   		then
     			sudo apt-get install sway -y
+       
+       		elif [ "$wminstall" = "2" ]
+  		then
+    			sudo apt-get install awesome-extra -y
+       
+       		elif [ "$wminstall" = "3" ]
+  		then
+    			sudo apt-get install i3 -y
+       
+       		elif [ "$wminstall" = "4" ]
+  		then
+    			sudo apt-get install dwm suckless-tools -y
        		fi
 
 		mkdir /home/$USER/.config
@@ -161,19 +189,27 @@ then
 			mkdir /home/$USER/.config/sway
 			cp sway/config /home/$USER/.config/sway/config
 		
-		elif [ "$DESKTOP_SESSION" = "awesome" ]
+		elif [ "$DESKTOP_SESSION" = "awesome" -o  "$wminstall" = "2" ]
 		then
 			echo "This is a AWESOME in developing" #---------------------------------------------------------------------------------------------------------------------------------
 	  
-		elif [ "$DESKTOP_SESSION" = "i3" ]
+		elif [ "$DESKTOP_SESSION" = "i3" -o  "$wminstall" = "3" ]
 		then
 			echo "This is a i3-wm in developing" #---------------------------------------------------------------------------------------------------------------------------------
-	  
-		elif [ "$XDG_SESSION_DESKTOP" = "KDE" ]
+	  	
+		elif [ "$DESKTOP_SESSION" = "DWM" -o  "$wminstall" = "4" ]
+		then
+			echo "This is a DWM in developing" #---------------------------------------------------------------------------------------------------------------------------------
+			
+		elif [ "$DESKTOP_SESSION" = "hyperland" -o  "$wminstall" = "5" ]
+		then
+			echo "This is a hyperland in developing" #---------------------------------------------------------------------------------------------------------------------------------
+			
+		elif [ "$XDG_SESSION_DESKTOP" = "KDE" -o  "$wminstall" = "6" ]
 		then
 			echo "This is a KDE in developing" #---------------------------------------------------------------------------------------------------------------------------------
 		
-  		elif [ "$XDG_CURRENT_DESKTOP" = "XFCE" ]
+  		elif [ "$XDG_CURRENT_DESKTOP" = "XFCE" -o  "$wminstall" = "7" ]
 		then
 			echo "This is a XFCE in developing" #---------------------------------------------------------------------------------------------------------------------------------
 		fi
