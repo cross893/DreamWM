@@ -7,10 +7,10 @@ then
 	if [ "$(uname -n)" = "archlinux" ]
 	then
   		wminstall=-1
- 		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 3 ]
+ 		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 5 ]
 		do
   			echo "Do you wanna install WM?"
-			read -p "sway - 1, awesome - 2, i3-wm - 3, nothing - 0: " wminstall
+			read -p "sway - 1, awesome - 2, i3-wm - 3, hyprland - 5, nothing - 0: " wminstall
 		done
   
 		while ! [ "$blackarchpack" = "y" -o "$blackarchpack" = "n" ]
@@ -37,6 +37,10 @@ then
 		elif [ "$wminstall" = "3" ]
 		then
 			yes | sudo pacman -S i3-wm
+   
+		elif [ "$wminstall" = "5" ]
+		then
+			yes | sudo pacman -S hyprland
 		fi
 		
 		mkdir /home/$USER/.config
@@ -68,13 +72,13 @@ then
 		then
 			echo "This is a i3-wm in developing" #---------------------------------------------------------------------------------------------------------------------------------
 			
-		elif [ "$DESKTOP_SESSION" = "DWM" -o  "$wminstall" = "4" ]
+		elif [ "$DESKTOP_SESSION" = "DWM" -o  "$wminstall" = "4" ] #?????????????????????????
 		then
 			echo "This is a DWM in developing" #---------------------------------------------------------------------------------------------------------------------------------
 			
-		elif [ "$DESKTOP_SESSION" = "hyperland" -o  "$wminstall" = "5" ]
+		elif [ "$DESKTOP_SESSION" = "hyperland" -o  "$wminstall" = "5" ] #?????????????????????????
 		then
-			echo "This is a hyperland in developing" #---------------------------------------------------------------------------------------------------------------------------------
+			echo "This is a hyprland in developing" #---------------------------------------------------------------------------------------------------------------------------------
 			
 		elif [ "$XDG_SESSION_DESKTOP" = "KDE" -o  "$wminstall" = "6" ]
 		then
@@ -197,11 +201,11 @@ then
 		then
 			echo "This is a i3-wm in developing" #---------------------------------------------------------------------------------------------------------------------------------
 	  	
-		elif [ "$DESKTOP_SESSION" = "DWM" -o  "$wminstall" = "4" ]
+		elif [ "$DESKTOP_SESSION" = "DWM" -o  "$wminstall" = "4" ] #?????????????????????????
 		then
 			echo "This is a DWM in developing" #---------------------------------------------------------------------------------------------------------------------------------
 			
-		elif [ "$DESKTOP_SESSION" = "hyperland" -o  "$wminstall" = "5" ]
+		elif [ "$DESKTOP_SESSION" = "hyperland" -o  "$wminstall" = "5" ] #?????????????????????????
 		then
 			echo "This is a hyperland in developing" #---------------------------------------------------------------------------------------------------------------------------------
 			
