@@ -9,13 +9,13 @@ then
   		wminstall=-1
  		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 5 ]
 		do
-  			echo "Do you wanna install WM?"
-			read -p "sway - 1, awesome - 2, i3-wm - 3, hyprland - 5, nothing - 0: " wminstall
+  			echo "\nDo you wanna install WM? (in developing)"
+			read -p "sway - 1, awesome - 2, i3-wm - 3, dwm - 4, hyprland - 5, nothing - 0: " wminstall
 		done
   
 		while ! [ "$blackarchpack" = "y" -o "$blackarchpack" = "n" ]
 		do
-			read -p "Do you wanna install blackarch packages? (y/n) " blackarchpack
+			read -p "\nDo you wanna install blackarch packages? (y/n) " blackarchpack
 		done
 		
 		yes | sudo pacman -S curl
@@ -28,10 +28,30 @@ then
 
 		if [ "$wminstall" = "1" ] #---------------------------------------------------------------------------------------------------------------------------------
 		then
-			yes | sudo pacman -S sway
-			yes | sudo pacman -S swaylock
-			yes | sudo pacman -S swayidle
+			yes | sudo pacman -S mesa
+			yes | sudo pacman -S base-devel
+			yes | sudo pacman -S wlroots
+			yes | sudo pacman -S wayland
+			yes | sudo pacman -S wayland-protocols
+			yes | sudo pacman -S pcre2
+			yes | sudo pacman -S json-c
+			yes | sudo pacman -S pango
+			yes | sudo pacman -S cairo
+			yes | sudo pacman -S gdk-pixbuf2
+			#yes | sudo pacman -S messon
+			yes | sudo pacman -S cmake
+			yes | sudo pacman -S bash-completion
+			yes | sudo pacman -S polkit
+			yes | sudo pacman -S grim
 			yes | sudo pacman -S swaybg
+			yes | sudo pacman -S swaylock
+			yes | sudo pacman -S awesome-terminal-fonts
+			yes | sudo pacman -S swayidle
+			yes | sudo pacman -S sway
+
+   			yes | pacman -S pulseaudio
+			yes | pacman -S pulseaudio-alsa
+			yes | pacman -S alsa-utils
    
 		elif [ "$wminstall" = "2" ] #---------------------------------------------------------------------------------------------------------------------------------
 		then
@@ -44,7 +64,6 @@ then
 		elif [ "$wminstall" = "4" ] #---------------------------------------------------------------------------------------------------------------------------------
 		then
   			echo "This is a DWM in developing"
-			#sudo pacman -S xorg
    
 		elif [ "$wminstall" = "5" ] #---------------------------------------------------------------------------------------------------------------------------------
 		then
@@ -58,6 +77,8 @@ then
 			yes | sudo pacman -S htop
 			yes | sudo pacman -S cmus
 			yes | sudo pacman -S nemo
+   
+			yes | sudo pacman -S mako
 			
 			yes | sudo pacman -S waybar
 			mkdir /home/$USER/.config/waybar
@@ -141,18 +162,16 @@ then
 	### Debian
 	elif [ "$(uname -n)" = "debian" ]
 	then
-		echo "Debian in developing"
-  
  		wminstall=-1
- 		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 4 ]
+ 		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 5 ]
 		do
-  			echo "Do you wanna install WM?"
-			read -p "sway - 1, awesome - 2, i3-wm - 3, dwm - 4, nothing - 0: " wminstall
+  			echo "\nDo you wanna install WM? (in developing)"
+			read -p "sway - 1, awesome - 2, i3-wm - 3, dwm - 4, hyprland - 5, nothing - 0: " wminstall
 		done
 		
 		while ! [ "$kalitools" = "y" -o "$kalitools" = "n" ]
 		do
-			read -p "Do you wanna install kali linux tools? (y/n) " kalitools
+			read -p "\nDo you wanna install kali linux tools? (y/n) " kalitools
 		done
 	 	
 		sudo apt-get install curl -y
@@ -181,6 +200,11 @@ then
        		elif [ "$wminstall" = "4" ] #---------------------------------------------------------------------------------------------------------------------------------
   		then
     			sudo apt-get install dwm suckless-tools -y
+       		fi
+       
+       		elif [ "$wminstall" = "5" ] #---------------------------------------------------------------------------------------------------------------------------------
+  		then
+    			echo "This is a hyprland in developing"
        		fi
 
 		mkdir /home/$USER/.config
