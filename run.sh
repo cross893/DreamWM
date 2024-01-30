@@ -25,7 +25,7 @@ then
 		yes | sudo pacman -S chromium
 		yes | sudo pacman -S gparted
 
-		if [ "$wminstall" = "1" ] then #---------------------------------------------------------------------------------------------------------------------------------
+		if [ "$wminstall" = "1" ]; then #---------------------------------------------------------------------------------------------------------------------------------
 			yes | sudo pacman -S mesa
 			yes | sudo pacman -S base-devel
 			yes | sudo pacman -S wlroots
@@ -51,19 +51,19 @@ then
 			yes | pacman -S pulseaudio-alsa
 			yes | pacman -S alsa-utils
    
-		elif [ "$wminstall" = "2" ] then #---------------------------------------------------------------------------------------------------------------------------------
+		elif [ "$wminstall" = "2" ]; then #---------------------------------------------------------------------------------------------------------------------------------
 			yes | sudo pacman -S awesome
    
-		elif [ "$wminstall" = "3" ] then #---------------------------------------------------------------------------------------------------------------------------------
+		elif [ "$wminstall" = "3" ]; then #---------------------------------------------------------------------------------------------------------------------------------
 			yes | sudo pacman -S i3-wm
    
-		elif [ "$wminstall" = "4" ] then #---------------------------------------------------------------------------------------------------------------------------------
+		elif [ "$wminstall" = "4" ]; then #---------------------------------------------------------------------------------------------------------------------------------
   			echo "This is a DWM in developing"
    
-		elif [ "$wminstall" = "5" ] then #---------------------------------------------------------------------------------------------------------------------------------
+		elif [ "$wminstall" = "5" ]; then #---------------------------------------------------------------------------------------------------------------------------------
 			yes | sudo pacman -S hyprland
    
-		elif [ "$wminstall" = "6" ] then #---------------------------------------------------------------------------------------------------------------------------------
+		elif [ "$wminstall" = "6" ]; then #---------------------------------------------------------------------------------------------------------------------------------
   			### Video drivers
 			yes | sudo pacman -S xf86-video-amdgpu
 			yes | sudo pacman -S xf86-video-ati
@@ -84,7 +84,7 @@ then
 			yes | sudo pacman -S alsa-utils
 			yes | sudo pacman -S alsa-plugins
    
-		elif [ "$wminstall" = "7" ] then #---------------------------------------------------------------------------------------------------------------------------------
+		elif [ "$wminstall" = "7" ]; then #---------------------------------------------------------------------------------------------------------------------------------
   			### Video drivers
 			yes | sudo pacman -S xf86-video-amdgpu
 			yes | sudo pacman -S xf86-video-ati
@@ -110,7 +110,7 @@ then
 		
 		mkdir /home/$USER/.config
 	 	
-		if [ "$XDG_SESSION_DESKTOP" = "sway" -o "$wminstall" = "1" ] then
+		if [ "$XDG_SESSION_DESKTOP" = "sway" -o "$wminstall" = "1" ]; then
 			yes | sudo pacman -S htop
 			yes | sudo pacman -S cmus
 			yes | sudo pacman -S nemo
@@ -130,22 +130,22 @@ then
 			mkdir /home/$USER/.config/sway
 			cp sway/config /home/$USER/.config/sway/config
 			
-		elif [ "$DESKTOP_SESSION" = "awesome" -o  "$wminstall" = "2" ] then
+		elif [ "$DESKTOP_SESSION" = "awesome" -o  "$wminstall" = "2" ]; then
 			echo "This is a AWESOME in developing" #---------------------------------------------------------------------------------------------------------------------------------
 			
-		elif [ "$DESKTOP_SESSION" = "i3" -o  "$wminstall" = "3" ] then
+		elif [ "$DESKTOP_SESSION" = "i3" -o  "$wminstall" = "3" ]; then
 			echo "This is a i3-wm in developing" #---------------------------------------------------------------------------------------------------------------------------------
 			
-		elif [ "$DESKTOP_SESSION" = "DWM" -o  "$wminstall" = "4" ] then
+		elif [ "$DESKTOP_SESSION" = "DWM" -o  "$wminstall" = "4" ]; then
 			echo "This is a DWM in developing" #---------------------------------------------------------------------------------------------------------------------------------
 			
-		elif [ "$DESKTOP_SESSION" = "hyperland" -o  "$wminstall" = "5" ] then #?????????????????????????
+		elif [ "$DESKTOP_SESSION" = "hyperland" -o  "$wminstall" = "5" ]; then #?????????????????????????
 			echo "This is a hyprland in developing" #---------------------------------------------------------------------------------------------------------------------------------
 			
-		elif [ "$XDG_SESSION_DESKTOP" = "KDE" -o  "$wminstall" = "6" ] then
+		elif [ "$XDG_SESSION_DESKTOP" = "KDE" -o  "$wminstall" = "6" ]; then
 			echo "This is a KDE in developing" #---------------------------------------------------------------------------------------------------------------------------------
 		
-		elif [ "$XDG_CURRENT_DESKTOP" = "XFCE" -o  "$wminstall" = "7" ] then
+		elif [ "$XDG_CURRENT_DESKTOP" = "XFCE" -o  "$wminstall" = "7" ]; then
 			echo "This is a XFCE in developing" #---------------------------------------------------------------------------------------------------------------------------------
 		fi
 	  
@@ -180,7 +180,7 @@ then
 		sudo cp zsh/su.p10k.zsh /root/.p10k.zsh
 		
 		### Install blackarch package
-		if [ "$blackarchpack" = "y" ] then
+		if [ "$blackarchpack" = "y" ]; then
 			curl -O https://blackarch.org/strap.sh
 			chmod +x strap.sh
 			sudo ./strap.sh
@@ -190,14 +190,14 @@ then
 	
 	
 	### Debian
-	elif [ "$(uname -n)" = "debian" ] then
+	elif [ "$(uname -n)" = "debian" ]; then
  		wminstall=-1
- 		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 5 ] do
+ 		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 5 ]; do
   			echo "\nDo you wanna install WM? (in developing)"
 			read -p "sway - 1, awesome - 2, i3-wm - 3, dwm - 4, hyprland - 5, nothing - 0: " wminstall
 		done
 		
-		while ! [ "$kalitools" = "y" -o "$kalitools" = "n" ] do
+		while ! [ "$kalitools" = "y" -o "$kalitools" = "n" ]; do
 			read -p "\nDo you wanna install kali linux tools? (y/n) " kalitools
 		done
 	 	
@@ -212,28 +212,28 @@ then
 		sudo apt-get install chromium -y
 		sudo apt-get install gparted -y
 
-		if [ "$wminstall" = "1" ] then #---------------------------------------------------------------------------------------------------------------------------------
+		if [ "$wminstall" = "1" ]; then #---------------------------------------------------------------------------------------------------------------------------------
     			sudo apt-get install sway -y
     			sudo apt-get install swaylock -y
     			sudo apt-get install swayidle -y
     			sudo apt-get install swaybg -y
        
-       		elif [ "$wminstall" = "2" ] then #---------------------------------------------------------------------------------------------------------------------------------
+       		elif [ "$wminstall" = "2" ]; then #---------------------------------------------------------------------------------------------------------------------------------
     			sudo apt-get install awesome-extra -y
        
-       		elif [ "$wminstall" = "3" ] then #---------------------------------------------------------------------------------------------------------------------------------
+       		elif [ "$wminstall" = "3" ]; then #---------------------------------------------------------------------------------------------------------------------------------
     			sudo apt-get install i3 -y
        
-       		elif [ "$wminstall" = "4" ] then #---------------------------------------------------------------------------------------------------------------------------------
+       		elif [ "$wminstall" = "4" ]; then #---------------------------------------------------------------------------------------------------------------------------------
     			sudo apt-get install dwm suckless-tools -y
        
-       		elif [ "$wminstall" = "5" ] then #---------------------------------------------------------------------------------------------------------------------------------
+       		elif [ "$wminstall" = "5" ]; then #---------------------------------------------------------------------------------------------------------------------------------
     			echo "This is a hyprland in developing"
        		fi
 
 		mkdir /home/$USER/.config
    
-		if [ "$XDG_SESSION_DESKTOP" = "sway" -o  "$wminstall" = "1" ] then
+		if [ "$XDG_SESSION_DESKTOP" = "sway" -o  "$wminstall" = "1" ]; then
 			sudo apt-get install htop -y
 			sudo apt-get install cmus -y
 			sudo apt-get install nemo -y
@@ -251,22 +251,22 @@ then
 			mkdir /home/$USER/.config/sway
 			cp sway/config /home/$USER/.config/sway/config
 		
-		elif [ "$DESKTOP_SESSION" = "awesome" -o  "$wminstall" = "2" ] then
+		elif [ "$DESKTOP_SESSION" = "awesome" -o  "$wminstall" = "2" ]; then
 			echo "This is a AWESOME in developing" #---------------------------------------------------------------------------------------------------------------------------------
 	  
-		elif [ "$DESKTOP_SESSION" = "i3" -o  "$wminstall" = "3" ] then
+		elif [ "$DESKTOP_SESSION" = "i3" -o  "$wminstall" = "3" ]; then
 			echo "This is a i3-wm in developing" #---------------------------------------------------------------------------------------------------------------------------------
 	  	
-		elif [ "$DESKTOP_SESSION" = "DWM" -o  "$wminstall" = "4" ] then
+		elif [ "$DESKTOP_SESSION" = "DWM" -o  "$wminstall" = "4" ]; then
 			echo "This is a DWM in developing" #---------------------------------------------------------------------------------------------------------------------------------
 			
-		elif [ "$DESKTOP_SESSION" = "hyperland" -o  "$wminstall" = "5" ] then #?????????????????????????
+		elif [ "$DESKTOP_SESSION" = "hyperland" -o  "$wminstall" = "5" ]; then #?????????????????????????
 			echo "This is a hyperland in developing" #---------------------------------------------------------------------------------------------------------------------------------
 			
-		elif [ "$XDG_SESSION_DESKTOP" = "KDE" -o  "$wminstall" = "6" ] then
+		elif [ "$XDG_SESSION_DESKTOP" = "KDE" -o  "$wminstall" = "6" ]; then
 			echo "This is a KDE in developing" #---------------------------------------------------------------------------------------------------------------------------------
 		
-  		elif [ "$XDG_CURRENT_DESKTOP" = "XFCE" -o  "$wminstall" = "7" ] then
+  		elif [ "$XDG_CURRENT_DESKTOP" = "XFCE" -o  "$wminstall" = "7" ]; then
 			echo "This is a XFCE in developing" #---------------------------------------------------------------------------------------------------------------------------------
 		fi
 	  
@@ -300,7 +300,7 @@ then
 		sudo cp zsh/su.p10k.zsh /root/.p10k.zsh
 	 
 		### Install kali linux tools
-		if [ "$kalitools" = "y" ] then
+		if [ "$kalitools" = "y" ]; then
 			echo "This is a kali linux tools in developing" #---------------------------------------------------------------------------------------------------------------------------------
 		fi
 	fi
