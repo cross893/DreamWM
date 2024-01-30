@@ -4,14 +4,14 @@ if sudo -v
 then
 
 	### Arch
-	if [ "$(uname -n)" = "archlinux" ] then
+	if [ "$(uname -n)" = "archlinux" ]; then
   		wminstall=-1
- 		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 7 ] do
+ 		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 7 ]; do
   			echo "\nDo you wanna install WM? (in developing)"
 			read -p "sway - 1, awesome - 2, i3-wm - 3, dwm - 4, hyprland - 5, kde - 6, xfce - 7, nothing - 0: " wminstall
 		done
   
-		while ! [ "$blackarchpack" = "y" -o "$blackarchpack" = "n" ] do
+		while ! [ "$blackarchpack" = "y" -o "$blackarchpack" = "n" ]; do
 			read -p "\nDo you wanna install blackarch packages? (y/n) " blackarchpack
 		done
 
