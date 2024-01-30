@@ -99,9 +99,12 @@ then
    
    			### Install and start xfce
 			sudo pacman -S xfce4
-   			echo 'if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then' >> ~/.bashrc
-   			echo '	exec startxfce4' >> ~/.bashrc
-   			echo 'fi' >> ~/.bashrc
+   			echo 'if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then' >> /home/$USER/.bashrc
+   			echo '	exec startxfce4' >> /home/$USER/.bashrc
+   			echo 'fi' >> /home/$USER/.bashrc
+   			echo 'if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then' >> /home/$USER/.zshrc
+   			echo '	exec startxfce4' >> /home/$USER/.zshrc
+   			echo 'fi' >> /home/$USER/.zshrc
 
       			### Install sound
 			yes | sudo pacman -S alsa-utils
