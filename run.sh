@@ -7,17 +7,19 @@ then
 	if [ "$(uname -n)" = "archlinux" ]
 	then
   		wminstall=-1
- 		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 5 ]
+ 		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 6 ]
 		do
   			echo "\nDo you wanna install WM? (in developing)"
-			read -p "sway - 1, awesome - 2, i3-wm - 3, dwm - 4, hyprland - 5, nothing - 0: " wminstall
+			read -p "sway - 1, awesome - 2, i3-wm - 3, dwm - 4, hyprland - 5, kde - 6, nothing - 0: " wminstall
 		done
   
 		while ! [ "$blackarchpack" = "y" -o "$blackarchpack" = "n" ]
 		do
 			read -p "\nDo you wanna install blackarch packages? (y/n) " blackarchpack
 		done
-		
+
+  		yes | sudo pacman -Suy
+    
 		yes | sudo pacman -S curl
 		yes | sudo pacman -S git
 		echo "1\ny" | sudo pacman -S man
@@ -68,6 +70,32 @@ then
 		elif [ "$wminstall" = "5" ] #---------------------------------------------------------------------------------------------------------------------------------
 		then
 			yes | sudo pacman -S hyprland
+   
+		elif [ "$wminstall" = "6" ] #---------------------------------------------------------------------------------------------------------------------------------
+		then
+  			### Video drivers
+			yes | sudo pacman -S xf86-video-amdgpu
+			yes | sudo pacman -S xf86-video-ati
+			yes | sudo pacman -S xf86-video-intel
+			yes | sudo pacman -S xf86-video-nouveau
+			yes | sudo pacman -S xf86-video-vesa
+			yes | sudo pacman -S nvidia
+
+			### X server
+			yes | sudo pacman -S xorg-server
+			yes | sudo pacman -S xorg-apps
+
+   			### Install and start plasma
+			yes | sudo pacman -S plasma
+   			sudo systemctl enable sddm
+
+      			### Install sound
+			yes | sudo pacman -S alsa-utils
+			yes | sudo pacman -S alsa-plugins
+   
+		elif [ "$wminstall" = "7" ] #---------------------------------------------------------------------------------------------------------------------------------
+		then
+			yes | sudo pacman -S xfce
 		fi
 		
 		mkdir /home/$USER/.config
@@ -174,6 +202,9 @@ then
 			read -p "\nDo you wanna install kali linux tools? (y/n) " kalitools
 		done
 	 	
+		sudo apt-get update -y
+		sudo apt-get upgrade -y
+  
 		sudo apt-get install curl -y
 		sudo apt-get install git -y
 		sudo apt-get install man -y
