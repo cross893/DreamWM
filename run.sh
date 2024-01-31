@@ -6,9 +6,9 @@ then
 	### Arch
 	if [ "$(uname -n)" = "archlinux" ]; then
   		wminstall=-1
- 		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 7 ]; do
+ 		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 8 ]; do
   			echo "\nDo you wanna install WM? (in developing)"
-			read -p "sway - 1, awesome - 2, i3-wm - 3, dwm - 4, hyprland - 5, kde - 6, xfce - 7, nothing - 0: " wminstall
+			read -p "sway - 1, awesome - 2, i3-wm - 3, dwm - 4, hyprland - 5, kde - 6, xfce - 7, gnome - 8, nothing - 0: " wminstall
 		done
   
 		while ! [ "$blackarchpack" = "y" -o "$blackarchpack" = "n" ]; do
@@ -53,6 +53,12 @@ then
    
 		elif [ "$wminstall" = "2" ]; then #---------------------------------------------------------------------------------------------------------------------------------
 			yes | sudo pacman -S awesome
+   			yes | sudo pacman -S gdm
+   			sudo systemctl enable gdm
+
+   			yes | pacman -S pulseaudio
+			yes | pacman -S pulseaudio-alsa
+			yes | pacman -S alsa-utils
    
 		elif [ "$wminstall" = "3" ]; then #---------------------------------------------------------------------------------------------------------------------------------
 			yes | sudo pacman -S i3-wm
@@ -63,7 +69,7 @@ then
 		elif [ "$wminstall" = "5" ]; then #---------------------------------------------------------------------------------------------------------------------------------
 			yes | sudo pacman -S hyprland
    
-		elif [ "$wminstall" = "6" ]; then #---------------------------------------------------------------------------------------------------------------------------------
+		elif [ "$wminstall" = "6" ]; then
   			### Video drivers
 			yes | sudo pacman -S xf86-video-amdgpu
 			yes | sudo pacman -S xf86-video-ati
@@ -84,7 +90,7 @@ then
 			yes | sudo pacman -S alsa-utils
 			yes | sudo pacman -S alsa-plugins
    
-		elif [ "$wminstall" = "7" ]; then #---------------------------------------------------------------------------------------------------------------------------------
+		elif [ "$wminstall" = "7" ]; then
   			### Video drivers
 			yes | sudo pacman -S xf86-video-amdgpu
 			yes | sudo pacman -S xf86-video-ati
@@ -99,12 +105,30 @@ then
    
    			### Install and start xfce
 			sudo pacman -S xfce4
-   			echo 'if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then' >> /home/$USER/.bashrc
-   			echo '	exec startxfce4' >> /home/$USER/.bashrc
-   			echo 'fi' >> /home/$USER/.bashrc
-   			#echo 'if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then' >> /home/$USER/.zshrc
-   			#echo '	exec startxfce4' >> /home/$USER/.zshrc
-   			#echo 'fi' >> /home/$USER/.zshrc
+   			yes | sudo pacman -S sddm
+   			sudo systemctl enable sddm
+
+      			### Install sound
+			yes | sudo pacman -S alsa-utils
+			yes | sudo pacman -S alsa-plugins
+   
+		elif [ "$wminstall" = "8" ]; then
+  			### Video drivers
+			yes | sudo pacman -S xf86-video-amdgpu
+			yes | sudo pacman -S xf86-video-ati
+			yes | sudo pacman -S xf86-video-intel
+			yes | sudo pacman -S xf86-video-nouveau
+			yes | sudo pacman -S xf86-video-vesa
+			yes | sudo pacman -S nvidia
+
+			### X server
+			yes | sudo pacman -S xorg-server
+			sudo pacman -S xorg-apps
+   
+   			### Install and start gnome
+			sudo pacman -S gnome-extra
+   			yes | sudo pacman -S gdm
+   			sudo systemctl enable gdm
 
       			### Install sound
 			yes | sudo pacman -S alsa-utils
@@ -150,6 +174,9 @@ then
 		
 		elif [ "$XDG_CURRENT_DESKTOP" = "XFCE" -o  "$wminstall" = "7" ]; then
 			echo "This is a XFCE in developing" #---------------------------------------------------------------------------------------------------------------------------------
+		
+		elif [ "$XDG_CURRENT_DESKTOP" = "GNOME" -o  "$wminstall" = "8" ]; then
+			echo "This is a GNOME in developing" #---------------------------------------------------------------------------------------------------------------------------------
 		fi
 	  
 		yes | sudo pacman -S conky
