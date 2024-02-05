@@ -24,6 +24,7 @@ then
 		yes | sudo pacman -S iwd
 	 	
 		yes | sudo pacman -S chromium
+		yes | sudo pacman -S firefox
 		yes | sudo pacman -S gparted
 
 		if [ "$wminstall" = "1" ]; then #---------------------------------------------------------------------------------------------------------------------------------
