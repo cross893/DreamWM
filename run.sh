@@ -171,7 +171,9 @@ then
 			
 		elif [ "$DESKTOP_SESSION" = "awesome" -o  "$wminstall" = "2" ]; then
 			echo "This is a AWESOME in developing" #---------------------------------------------------------------------------------------------------------------------------------
-			
+			mkdir /home/$USER/.config/awesome
+   			cp awesome/rc.lua /home/$USER/.config/awesome/rc.lua
+      			
 		elif [ "$DESKTOP_SESSION" = "i3" -o  "$wminstall" = "3" ]; then
 			echo "This is a i3-wm in developing" #---------------------------------------------------------------------------------------------------------------------------------
 			
