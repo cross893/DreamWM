@@ -113,7 +113,7 @@ optionsmenu = {
     { "wi-fi", terminal .. " -e iwctl" },
 }
 termmenu = {
-    { "kitty", terminal }
+    { "kitty", terminal },
     { "term (grey)", "xterm -bg black -fg grey bash" },
     { "term (red)", "xterm -bg black -fg red bash" },
     { "term (green)", "xterm -bg black -fg green bash" },
@@ -121,6 +121,19 @@ termmenu = {
     { "term (white)", "xterm -bg black -fg white bash" }
 }
 
+antiforensicmenu = {
+  { "ropeadope", "kitty -e sh -c 'ropeadope ; bash'" },
+  { "saruman", "kitty -e sh -c 'saruman ; bash'" },
+  { "sdel", "kitty -e sh -c 'sdel -h ; bash'" },
+  { "sfill", "kitty -e sh -c 'sfill -h ; bash'" },
+  { "smem-secure-delete", "kitty -e sh -c 'smem-secure-delete -h ; bash'" },
+  { "srm", "kitty -e sh -c 'srm -h ; bash'" },
+  { "sswap", "kitty -e sh -c 'sswap -h ; bash'" },
+  { "steghide", "kitty -e sh -c 'steghide --help ; bash'" },
+  { "zsteg", "kitty -e sh -c 'zsteg -h ; bash'" },
+  { "zsteg-mask", "kitty -e sh -c 'zsteg-mask ; bash'" },
+  { "zsteg-reflow", "kitty -e sh -c 'zsteg-reflow ; bash'" },
+}
 hackmenu = {
   { "anti-forensic", antiforensicmenu },
   { "automation", automationmenu },
