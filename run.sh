@@ -53,8 +53,8 @@ then
    
 		elif [ "$wminstall" = "2" ]; then #---------------------------------------------------------------------------------------------------------------------------------
 			yes | sudo pacman -S awesome
-   			yes | sudo pacman -S gdm
-   			sudo systemctl enable gdm
+   			yes | sudo pacman -S sddm
+   			sudo systemctl enable sddm
 
    			yes | pacman -S pulseaudio
 			yes | pacman -S pulseaudio-alsa
@@ -62,12 +62,24 @@ then
    
 		elif [ "$wminstall" = "3" ]; then #---------------------------------------------------------------------------------------------------------------------------------
 			yes | sudo pacman -S i3-wm
+   			yes | sudo pacman -S sddm
+   			sudo systemctl enable sddm
+
+   			yes | pacman -S pulseaudio
+			yes | pacman -S pulseaudio-alsa
+			yes | pacman -S alsa-utils
    
 		elif [ "$wminstall" = "4" ]; then #---------------------------------------------------------------------------------------------------------------------------------
   			echo "This is a DWM in developing"
    
 		elif [ "$wminstall" = "5" ]; then #---------------------------------------------------------------------------------------------------------------------------------
 			yes | sudo pacman -S hyprland
+   			yes | sudo pacman -S sddm
+   			sudo systemctl enable sddm
+
+   			yes | pacman -S pulseaudio
+			yes | pacman -S pulseaudio-alsa
+			yes | pacman -S alsa-utils
    
 		elif [ "$wminstall" = "6" ]; then
   			### Video drivers
