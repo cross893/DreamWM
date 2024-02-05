@@ -1194,16 +1194,16 @@ codeauditmenu10 = {
   { "yasca", "urxvt -e sh -c 'yasca ; bash'" },
 }
 codeauditmenu = {
-  { "1", codeauditmenu1 }
-  { "2", codeauditmenu2 }
-  { "3", codeauditmenu3 }
-  { "4", codeauditmenu4 }
-  { "5", codeauditmenu5 }
-  { "6", codeauditmenu6 }
-  { "7", codeauditmenu7 }
-  { "8", codeauditmenu8 }
-  { "9", codeauditmenu9 }
-  { "10", codeauditmenu10 }
+  { "1", codeauditmenu1 },
+  { "2", codeauditmenu2 },
+  { "3", codeauditmenu3 },
+  { "4", codeauditmenu4 },
+  { "5", codeauditmenu5 },
+  { "6", codeauditmenu6 },
+  { "7", codeauditmenu7 },
+  { "8", codeauditmenu8 },
+  { "9", codeauditmenu9 },
+  { "10", codeauditmenu10 },
 }
 configmenu = {
   { "bactl", "urxvt -e sh -c 'bactl ; bash'" },
