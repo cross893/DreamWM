@@ -21,6 +21,7 @@ then
 		yes | sudo pacman -S git
 		echo "1\ny" | sudo pacman -S man
 		yes | sudo pacman -S ranger
+		yes | sudo pacman -S iwd
 	 	
 		yes | sudo pacman -S chromium
 		yes | sudo pacman -S gparted
