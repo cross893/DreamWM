@@ -100,6 +100,8 @@ myawesomemenu = {
     { "edit config", editor_cmd .. " " .. awesome.conffile },
     { "restart", awesome.restart },
     { "quit", function() awesome.quit() end },
+    { "reboot", "reboot" },
+    { "shutdown", "shutdown now" },
 }
 standartmenu = {
     { "chromium", "chromium" },
@@ -119,11 +121,63 @@ termmenu = {
     { "term (white)", "xterm -bg black -fg white bash" }
 }
 
+hackmenu = {
+  { "anti-forensic", antiforensicmenu },
+  { "automation", automationmenu },
+  { "automobile", automobilemenu },
+  { "backdoor", backdoormenu },
+  { "binary", binarymenu },
+  { "bluetooth", bluetoothmenu },
+  { "code-audit", codeauditmenu },
+  { "config", configmenu },
+  { "cracker", crackermenu },
+  { "crypto", cryptomenu },
+  { "database", databasemenu },
+  { "debugger", debuggermenu },
+  { "decompiler", decompilermenu },
+  { "defensive", defensivemenu },
+  { "disassembler", disassemblermenu },
+  { "dos", dosmenu },
+  { "drone", dronemenu },
+  { "exploitation", exploitationmenu },
+  { "fingerprint", fingerprintmenu },
+  { "firmware", firmwaremenu },
+  { "forensic", forensicmenu },
+  { "fuzzer", fuzzermenu },
+  { "gpu", gpumenu },
+  { "hardware", hardwaremenu },
+  { "honeypot", honeypotmenu },
+  { "ids", idsmenu },
+  { "keylogger", keyloggermenu },
+  { "malware", malwaremenu },
+  { "misc", miscmenu },
+  { "mobile", mobilemenu },
+  { "networking", networkingmenu },
+  { "nfc", nfcmenu },
+  { "packer", packermenu },
+  { "proxy", proxymenu },
+  { "radio", radiomenu },
+  { "recon", reconmenu },
+  { "reversing", reversingmenu },
+  { "scanner", scannermenu },
+  { "sniffer", sniffermenu },
+  { "social", socialmenu },
+  { "spoof", spoofmenu },
+  { "stego", stegomenu },
+  { "tunnel", tunnelmenu },
+  { "unpacker", unpackermenu },
+  { "voip", voipmenu },
+  { "webapp", webappmenu },
+  { "windows", windowsmenu },
+  { "wireless", wirelessmenu },
+}
+
 mymainmenu = awful.menu({
     items = { 
         { "standart", standartmenu},
-        { "options", optionsmenu }
-        { "terminals", termmenu }
+        { "options", optionsmenu },
+        { "terminals", termmenu },
+        { "hack", hackmenu },
         { "awesome", myawesomemenu, beautiful.awesome_icon },
     }
 })
