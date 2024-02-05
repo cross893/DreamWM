@@ -134,7 +134,7 @@ antiforensicmenu = {
   { "zsteg-mask", "kitty -e sh -c 'zsteg-mask ; bash'" },
   { "zsteg-reflow", "kitty -e sh -c 'zsteg-reflow ; bash'" },
 }
-automationmenu = {
+automationmenu1 = {
   { "airgeddon", "kitty -e sh -c 'airgeddon ; bash'" },
   { "apt2", "kitty -e sh -c 'apt2 -h ; bash'" },
   { "armitage", "kitty -e sh -c 'armitage -h ; bash'" },
@@ -155,6 +155,8 @@ automationmenu = {
   { "binex", "kitty -e sh -c 'binex -h ; bash'" },
   { "blueranger", "kitty -e sh -c 'blueranger ; bash'" },
   { "brutespray", "kitty -e sh -c 'brutespray -h ; bash'" },
+}
+automationmenu2 = {
   { "brutex", "kitty -e sh -c 'brutex ; bash'" },
   { "brutex-masscan", "kitty -e sh -c 'brutex-masscan ; bash'" },
   { "byepass", "kitty -e sh -c 'byepass -h ; bash'" },
@@ -175,6 +177,8 @@ automationmenu = {
   { "mocha", "kitty -e sh -c 'mocha ; bash'" },
   { "uuid", "kitty -e sh -c 'uuid ; bash'" },
   { "semver", "kitty -e sh -c 'semver ; bash'" },
+}
+automationmenu3 = {
   { "uuid", "kitty -e sh -c 'uuid ; bash'" },
   { "semver", "kitty -e sh -c 'semver ; bash'" },
   { "uuid", "kitty -e sh -c 'uuid ; bash'" },
@@ -195,6 +199,8 @@ automationmenu = {
   { "rmiregistry", "kitty -e sh -c 'rmiregistry ; bash'" },
   { "serialver", "kitty -e sh -c 'serialver ; bash'" },
   { "tsc", "kitty -e sh -c 'tsc ; bash'" },
+}
+automationmenu3 = {
   { "tsserver", "kitty -e sh -c 'tsserver ; bash'" },
   { "java", "kitty -e sh -c 'java ; bash'" },
   { "javac", "kitty -e sh -c 'javac ; bash'" },
@@ -215,6 +221,8 @@ automationmenu = {
   { "dumb0", "kitty -e sh -c 'dumb0 -h ; bash'" },
   { "easy-creds", "kitty -e sh -c 'easy-creds ; bash'" },
   { "easyda", "kitty -e sh -c 'easyda ; bash'" },
+}
+automationmenu4 = {
   { "emp3r0r", "kitty -e sh -c 'emp3r0r -h ; bash'" },
   { "empire-client", "kitty -e sh -c 'empire-client ; bash'" },
   { "empire-server", "kitty -e sh -c 'empire-server ; bash'" },
@@ -235,6 +243,8 @@ automationmenu = {
   { "ipmipwn", "kitty -e sh -c 'ipmipwn ; bash'" },
   { "jaidam", "kitty -e sh -c 'jaidam ; bash'" },
   { "unix-jboss-autopwn", "kitty -e sh -c 'unix-jboss-autopwn ; bash'" },
+}
+automationmenu5 = {
   { "win-jboss-autopwn", "kitty -e sh -c 'win-jboss-autopwn ; bash'" },
   { "kernelpop", "kitty -e sh -c 'kernelpop -h ; bash'" },
   { "killcast", "kitty -e sh -c 'killcast -h ; bash'" },
@@ -255,6 +265,8 @@ automationmenu = {
   { "ldapinit", "kitty -e sh -c 'ldapinit -h ; bash'" },
   { "ldapmodifygroup", "kitty -e sh -c 'ldapmodifygroup -h ; bash'" },
   { "ldapmodifymachine", "kitty -e sh -c 'ldapmodifymachine -h ; bash'" },
+}
+automationmenu6 = {
   { "ldapmodifyuser", "kitty -e sh -c 'ldapmodifyuser -h ; bash'" },
   { "ldaprenamegroup", "kitty -e sh -c 'ldaprenamegroup -h ; bash'" },
   { "ldaprenamemachine", "kitty -e sh -c 'ldaprenamemachine -h ; bash'" },
@@ -275,6 +287,8 @@ automationmenu = {
   { "etter.dns", "kitty -e sh -c 'etter.dns ; bash'" },
   { "http.lua", "kitty -e sh -c 'http.lua ; bash'" },
   { "warn.ogg", "kitty -e sh -c 'warn.ogg ; bash'" },
+}
+automationmenu7 = {
   { "msf-mpc", "kitty -e sh -c 'msf-mpc -h ; bash'" },
   { "msfenum", "kitty -e sh -c 'msfenum -h ; bash'" },
   { "multiscanner", "kitty -e sh -c 'multiscanner -h ; bash'" },
@@ -295,6 +309,8 @@ automationmenu = {
   { "scap-as-rpm", "kitty -e sh -c 'scap-as-rpm -h ; bash'" },
   { "osslsigncode", "kitty -e sh -c 'osslsigncode -h ; bash'" },
   { "owtf", "kitty -e sh -c 'owtf ; bash'" },
+}
+automationmenu8 = {
   { "panoptic", "kitty -e sh -c 'panoptic -h ; bash'" },
   { "pastejacker", "kitty -e sh -c 'pastejacker ; bash'" },
   { "pastemonitor", "kitty -e sh -c 'pastemonitor -h ; bash'" },
@@ -315,6 +331,8 @@ automationmenu = {
   { "pwndrop", "kitty -e sh -c 'pwndrop -h ; bash'" },
   { "pyfuscation", "kitty -e sh -c 'pyfuscation -h ; bash'" },
   { "arsenic-check-ie11", "kitty -e sh -c 'arsenic-check-ie11 ; bash'" },
+}
+automationmenu9 = {
   { "shodan", "kitty -e sh -c 'shodan ; bash'" },
   { "shodan2", "kitty -e sh -c 'shodan2 ; bash'" },
   { "recomposer", "kitty -e sh -c 'recomposer -h ; bash'" },
@@ -335,6 +353,8 @@ automationmenu = {
   { "sipvicious-svmap", "kitty -e sh -c 'sipvicious-svmap -h ; bash'" },
   { "sipvicious-svreport", "kitty -e sh -c 'sipvicious-svreport -h ; bash'" },
   { "sipvicious-svwar", "kitty -e sh -c 'sipvicious-svwar -h ; bash'" },
+}
+automationmenu10 = {
   { "sn00p", "kitty -e sh -c 'sn00p ; bash'" },
   { "sn1per", "kitty -e sh -c 'sn1per ; bash'" },
   { "http-default-accounts-fingerprints-nndefaccts.lua", "kitty -e sh -c 'http-default-accounts-fingerprints-nndefaccts.lua ; bash'" },
@@ -355,6 +375,8 @@ automationmenu = {
   { "valhalla-cli", "kitty -e sh -c 'valhalla-cli -h ; bash'" },
   { "vbsmin", "kitty -e sh -c 'vbsmin -h ; bash'" },
   { "veil", "kitty -e sh -c 'veil ; bash'" },
+}
+automationmenu11 = {
   { "vlan-hopping", "kitty -e sh -c 'vlan-hopping ; bash'" },
   { "voiphopper", "kitty -e sh -c 'voiphopper -h ; bash'" },
   { "wifi-autopwner", "kitty -e sh -c 'wifi-autopwner -h ; bash'" },
@@ -364,6 +386,19 @@ automationmenu = {
   { "yinjector", "kitty -e sh -c 'yinjector -h ; bash'" },
   { "zerapwn", "kitty -e sh -c 'zerapwn ; bash'" },
   { "zirikatu", "kitty -e sh -c 'zirikatu ; bash'" },
+}
+automationmenu = {
+  { "1", automationmenu1 },
+  { "2", automationmenu2 },
+  { "3", automationmenu3 },
+  { "4", automationmenu4 },
+  { "5", automationmenu5 },
+  { "6", automationmenu6 },
+  { "7", automationmenu7 },
+  { "8", automationmenu8 },
+  { "9", automationmenu9 },
+  { "10", automationmenu10 },
+  { "11", automationmenu11 },
 }
 hackmenu = {
   { "anti-forensic", antiforensicmenu },
