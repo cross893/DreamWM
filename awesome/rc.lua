@@ -59,7 +59,6 @@ end
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
-browser = "chromium"
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
 editor = os.getenv("vim") or "vim"
@@ -96,23 +95,29 @@ awful.layout.layouts = {
 -- {{{ Menu
 -- Create a launcher widget and a main menu
 myawesomemenu = {
-   { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
-   { "restart", awesome.restart },
-   { "quit", function() awesome.quit() end },
+    { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
+    { "manual", terminal .. " -e man awesome" },
+    { "edit config", editor_cmd .. " " .. awesome.conffile },
+    { "restart", awesome.restart },
+    { "quit", function() awesome.quit() end },
 }
-
 standartmenu = {
-   { "browser", browser },
-   { "explorer", "nemo" },
+    { "browser", "chromium" },
+    { "explorer", "nemo" },
+    { "ranger", terminal .. " -e ranger" },
+}
+optionsmenu = {
+    { "wi-fi", terminal .. " -e iwctl" },
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "standart", standartmenu},
-                                    { "open terminal", terminal }
-                                  }
-                        })
+mymainmenu = awful.menu({
+    items = { 
+        { "standart", standartmenu},
+        { "options", optionsmenu }
+        { "open terminal", terminal }
+        { "awesome", myawesomemenu, beautiful.awesome_icon },
+    }
+})
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
