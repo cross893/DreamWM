@@ -117,8 +117,8 @@ then
    
    			### Install and start xfce
 			sudo pacman -S xfce4
-   			yes | sudo pacman -S gdm
-   			sudo systemctl enable gdm
+   			yes | sudo pacman -S sddm
+   			sudo systemctl enable sddm
 
       			### Install sound
 			yes | sudo pacman -S alsa-utils
