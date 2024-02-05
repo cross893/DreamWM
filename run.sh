@@ -26,6 +26,7 @@ then
 		yes | sudo pacman -S chromium
 		yes | sudo pacman -S firefox
 		yes | sudo pacman -S gparted
+		yes | sudo pacman -S notepadqq
 
 		if [ "$wminstall" = "1" ]; then #---------------------------------------------------------------------------------------------------------------------------------
 			yes | sudo pacman -S mesa
