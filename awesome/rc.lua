@@ -102,19 +102,28 @@ myawesomemenu = {
     { "quit", function() awesome.quit() end },
 }
 standartmenu = {
-    { "browser", "chromium" },
+    { "chromium", "chromium" },
+    { "firefox", "firefox" },
     { "explorer", "nemo" },
     { "ranger", terminal .. " -e ranger" },
 }
 optionsmenu = {
     { "wi-fi", terminal .. " -e iwctl" },
 }
+termmenu = {
+    { "kitty", terminal }
+    { "term (grey)", "xterm -bg black -fg grey bash" },
+    { "term (red)", "xterm -bg black -fg red bash" },
+    { "term (green)", "xterm -bg black -fg green bash" },
+    { "term (yellow)", "xterm -bg black -fg yellow bash" },
+    { "term (white)", "xterm -bg black -fg white bash" }
+}
 
 mymainmenu = awful.menu({
     items = { 
         { "standart", standartmenu},
         { "options", optionsmenu }
-        { "open terminal", terminal }
+        { "terminals", termmenu }
         { "awesome", myawesomemenu, beautiful.awesome_icon },
     }
 })
