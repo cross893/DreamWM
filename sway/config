@@ -22,7 +22,7 @@ bindsym --to-code $mod+e exec nemo
 bindsym --to-code $mod+Shift+q kill
 bindsym --to-code $mod+Shift+c reload
 bindsym --to-code $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-bindsym --to-code $mod+l exec 'swaylock -f -c 000000'
+bindsym --to-code $mod+f9 exec 'swaylock -f -c 000000'
 
 # Scratchpad сворачивание и разворачивание окон
 bindsym $mod+Shift+minus move scratchpad
