@@ -2037,8 +2037,6 @@ debuggermenu1 = {
 debuggermenu2 = {
   { "ghidra", hackterm .. " -e sh -c 'ghidra ; bash'" },
   { "ghidra-analyzeHeadless", hackterm .. " -e sh -c 'ghidra-analyzeHeadless ; bash'" },
-  { "ghidra", hackterm .. " -e sh -c 'ghidra ; bash'" },
-  { "ghidra-analyzeHeadless", hackterm .. " -e sh -c 'ghidra-analyzeHeadless ; bash'" },
   { "heaptrace", hackterm .. " -e sh -c 'heaptrace -h ; bash'" },
   { "iaito", hackterm .. " -e sh -c 'iaito ; bash'" },
   { "gen-bout", hackterm .. " -e sh -c 'gen-bout ; bash'" },
@@ -2055,10 +2053,10 @@ debuggermenu2 = {
   { "lldb", hackterm .. " -e sh -c 'lldb ; bash'" },
   { "lldb-argdumper", hackterm .. " -e sh -c 'lldb-argdumper ; bash'" },
   { "lldb-instr", hackterm .. " -e sh -c 'lldb-instr ; bash'" },
-}
-debuggermenu3 = {
   { "lldb-server", hackterm .. " -e sh -c 'lldb-server ; bash'" },
   { "lldb-vscode", hackterm .. " -e sh -c 'lldb-vscode ; bash'" },
+}
+debuggermenu3 = {
   { "malwasm", hackterm .. " -e sh -c 'malwasm ; bash'" },
   { "ollydbg", hackterm .. " -e sh -c 'ollydbg ; bash'" },
   { "plasma-disasm", hackterm .. " -e sh -c 'plasma-disasm -h ; bash'" },
@@ -2077,10 +2075,10 @@ debuggermenu3 = {
   { "ravc2", hackterm .. " -e sh -c 'ravc2 ; bash'" },
   { "rax2", hackterm .. " -e sh -c 'rax2 ; bash'" },
   { "r2", hackterm .. " -e sh -c 'r2 -h ; bash'" },
-}
-debuggermenu4 = {
   { "r2agent", hackterm .. " -e sh -c 'r2agent -h ; bash'" },
   { "r2pm", hackterm .. " -e sh -c 'r2pm ; bash'" },
+}
+debuggermenu4 = {
   { "r2r", hackterm .. " -e sh -c 'r2r ; bash'" },
   { "radare2", hackterm .. " -e sh -c 'radare2 -h ; bash'" },
   { "radiff2", hackterm .. " -e sh -c 'radiff2 -h ; bash'" },
@@ -2099,8 +2097,6 @@ debuggermenu4 = {
   { "cythonize", hackterm .. " -e sh -c 'cythonize ; bash'" },
   { "py.test", hackterm .. " -e sh -c 'py.test ; bash'" },
   { "pytest", hackterm .. " -e sh -c 'pytest ; bash'" },
-}
-debuggermenu5 = {
   { "shellnoob", hackterm .. " -e sh -c 'shellnoob -h ; bash'" },
   { "voltron", hackterm .. " -e sh -c 'voltron -h ; bash'" },
 }
@@ -2109,7 +2105,6 @@ debuggermenu = {
   { "2", debuggermenu2 },
   { "3", debuggermenu3 },
   { "4", debuggermenu4 },
-  { "5", debuggermenu5 },
 }
 decompilermenu1 = {
   { "beebug", hackterm .. " -e sh -c 'beebug -h ; bash'" },
@@ -2439,8 +2434,6 @@ disassemblermenu2 = {
   { "kedbg64", hackterm .. " -e sh -c 'kedbg64 ; bash'" },
   { "ghidra", hackterm .. " -e sh -c 'ghidra ; bash'" },
   { "ghidra-analyzeHeadless", hackterm .. " -e sh -c 'ghidra-analyzeHeadless ; bash'" },
-  { "ghidra", hackterm .. " -e sh -c 'ghidra ; bash'" },
-  { "ghidra-analyzeHeadless", hackterm .. " -e sh -c 'ghidra-analyzeHeadless ; bash'" },
   { "hopper", hackterm .. " -e sh -c 'hopper ; bash'" },
   { "iaito", hackterm .. " -e sh -c 'iaito ; bash'" },
   { "ida64", hackterm .. " -e sh -c 'ida64 ; bash'" },
@@ -2452,10 +2445,10 @@ disassemblermenu2 = {
   { "pe-reader", hackterm .. " -e sh -c 'pe-reader ; bash'" },
   { "maltrieve", hackterm .. " -e sh -c 'maltrieve -h ; bash'" },
   { "maltrievecategorizer", hackterm .. " -e sh -c 'maltrievecategorizer ; bash'" },
-}
-disassemblermenu3 = {
   { "mara-framework", hackterm .. " -e sh -c 'mara-framework ; bash'" },
   { "jadx", hackterm .. " -e sh -c 'jadx -h ; bash'" },
+}
+disassemblermenu3 = {
   { "jadx-gui", hackterm .. " -e sh -c 'jadx-gui ; bash'" },
   { "fedora-dirk-ipv6.diff", hackterm .. " -e sh -c 'fedora-dirk-ipv6.diff ; bash'" },
   { "openssl.Darwin.x86_64", hackterm .. " -e sh -c 'openssl.Darwin.x86_64 ; bash'" },
@@ -2474,10 +2467,10 @@ disassemblermenu3 = {
   { "pwntools-elfdiff", hackterm .. " -e sh -c 'pwntools-elfdiff -h ; bash'" },
   { "pwntools-elfpatch", hackterm .. " -e sh -c 'pwntools-elfpatch -h ; bash'" },
   { "pwntools-errno", hackterm .. " -e sh -c 'pwntools-errno -h ; bash'" },
-}
-disassemblermenu4 = {
   { "pwntools-hex", hackterm .. " -e sh -c 'pwntools-hex -h ; bash'" },
   { "pwntools-main", hackterm .. " -e sh -c 'pwntools-main -h ; bash'" },
+}
+disassemblermenu4 = {
   { "pwntools-phd", hackterm .. " -e sh -c 'pwntools-phd -h ; bash'" },
   { "pwntools-pwn", hackterm .. " -e sh -c 'pwntools-pwn -h ; bash'" },
   { "pwntools-pwnstrip", hackterm .. " -e sh -c 'pwntools-pwnstrip -h ; bash'" },
@@ -2497,10 +2490,10 @@ disassemblermenu4 = {
   { "rafind2", hackterm .. " -e sh -c 'rafind2 -h ; bash'" },
   { "ragg2", hackterm .. " -e sh -c 'ragg2 -h ; bash'" },
   { "rarun2", hackterm .. " -e sh -c 'rarun2 -h ; bash'" },
-}
-disassemblermenu5 = {
   { "rasign2", hackterm .. " -e sh -c 'rasign2 ; bash'" },
   { "rasm2", hackterm .. " -e sh -c 'rasm2 -h ; bash'" },
+}
+disassemblermenu5 = {
   { "ravc2", hackterm .. " -e sh -c 'ravc2 ; bash'" },
   { "rax2", hackterm .. " -e sh -c 'rax2 ; bash'" },
   { "r2", hackterm .. " -e sh -c 'r2 -h ; bash'" },
@@ -2519,10 +2512,10 @@ disassemblermenu5 = {
   { "redasm", hackterm .. " -e sh -c 'redasm ; bash'" },
   { "cutter", hackterm .. " -e sh -c 'cutter ; bash'" },
   { "scratchabit", hackterm .. " -e sh -c 'scratchabit -h ; bash'" },
-}
-disassemblermenu6 = {
   { "baksmali", hackterm .. " -e sh -c 'baksmali -h ; bash'" },
   { "smali", hackterm .. " -e sh -c 'smali -h ; bash'" },
+}
+disassemblermenu6 = {
   { "baksmali", hackterm .. " -e sh -c 'baksmali -h ; bash'" },
   { "smali", hackterm .. " -e sh -c 'smali -h ; bash'" },
   { "unstrip", hackterm .. " -e sh -c 'unstrip ; bash'" },
@@ -7290,8 +7283,6 @@ reversingmenu6 = {
   { "frida-ios-dump", hackterm .. " -e sh -c 'frida-ios-dump -h ; bash'" },
   { "ghidra", hackterm .. " -e sh -c 'ghidra ; bash'" },
   { "ghidra-analyzeHeadless", hackterm .. " -e sh -c 'ghidra-analyzeHeadless ; bash'" },
-  { "ghidra", hackterm .. " -e sh -c 'ghidra ; bash'" },
-  { "ghidra-analyzeHeadless", hackterm .. " -e sh -c 'ghidra-analyzeHeadless ; bash'" },
   { "gostringsr2", hackterm .. " -e sh -c 'gostringsr2 -h ; bash'" },
   { "hopper", hackterm .. " -e sh -c 'hopper ; bash'" },
   { "iaito", hackterm .. " -e sh -c 'iaito ; bash'" },
@@ -7300,10 +7291,10 @@ reversingmenu6 = {
   { "jad", hackterm .. " -e sh -c 'jad -h ; bash'" },
   { "jadx", hackterm .. " -e sh -c 'jadx -h ; bash'" },
   { "jadx-gui", hackterm .. " -e sh -c 'jadx-gui ; bash'" },
-}
-reversingmenu7 = {
   { "jadx", hackterm .. " -e sh -c 'jadx -h ; bash'" },
   { "jadx-gui", hackterm .. " -e sh -c 'jadx-gui ; bash'" },
+}
+reversingmenu7 = {
   { "jadx", hackterm .. " -e sh -c 'jadx -h ; bash'" },
   { "jadx-gui", hackterm .. " -e sh -c 'jadx-gui ; bash'" },
   { "jadx", hackterm .. " -e sh -c 'jadx -h ; bash'" },
@@ -7322,10 +7313,10 @@ reversingmenu7 = {
   { "gen-random-bout", hackterm .. " -e sh -c 'gen-random-bout ; bash'" },
   { "kleaver", hackterm .. " -e sh -c 'kleaver -h ; bash'" },
   { "klee", hackterm .. " -e sh -c 'klee -h ; bash'" },
-}
-reversingmenu8 = {
   { "klee-stats", hackterm .. " -e sh -c 'klee-stats -h ; bash'" },
   { "ktest-tool", hackterm .. " -e sh -c 'ktest-tool -h ; bash'" },
+}
+reversingmenu8 = {
   { "libc-add", hackterm .. " -e sh -c 'libc-add -h ; bash'" },
   { "libc-download", hackterm .. " -e sh -c 'libc-download -h ; bash'" },
   { "libc-dump", hackterm .. " -e sh -c 'libc-dump -h ; bash'" },
@@ -7344,10 +7335,10 @@ reversingmenu8 = {
   { "openssl.Linux.i686", hackterm .. " -e sh -c 'openssl.Linux.i686 ; bash'" },
   { "openssl.Linux.x86_64", hackterm .. " -e sh -c 'openssl.Linux.x86_64 ; bash'" },
   { "marc4dasm", hackterm .. " -e sh -c 'marc4dasm -h ; bash'" },
-}
-reversingmenu9 = {
   { "createnpk", hackterm .. " -e sh -c 'createnpk ; bash'" },
   { "dumpnpk", hackterm .. " -e sh -c 'dumpnpk ; bash'" },
+}
+reversingmenu9 = {
   { "unpacknpk", hackterm .. " -e sh -c 'unpacknpk ; bash'" },
   { "netzob", hackterm .. " -e sh -c 'netzob -h ; bash'" },
   { "nili", hackterm .. " -e sh -c 'nili ; bash'" },
@@ -7366,10 +7357,10 @@ reversingmenu9 = {
   { "pwntools-asm", hackterm .. " -e sh -c 'pwntools-asm -h ; bash'" },
   { "pwntools-checksec", hackterm .. " -e sh -c 'pwntools-checksec -h ; bash'" },
   { "pwntools-common", hackterm .. " -e sh -c 'pwntools-common -h ; bash'" },
-}
-reversingmenu10 = {
   { "pwntools-constgrep", hackterm .. " -e sh -c 'pwntools-constgrep -h ; bash'" },
   { "pwntools-cyclic", hackterm .. " -e sh -c 'pwntools-cyclic -h ; bash'" },
+}
+reversingmenu10 = {
   { "pwntools-debug", hackterm .. " -e sh -c 'pwntools-debug ; bash'" },
   { "pwntools-disablenx", hackterm .. " -e sh -c 'pwntools-disablenx ; bash'" },
   { "pwntools-disasm", hackterm .. " -e sh -c 'pwntools-disasm -h ; bash'" },
@@ -7388,10 +7379,10 @@ reversingmenu10 = {
   { "frida", hackterm .. " -e sh -c 'frida -h ; bash'" },
   { "frida-compile", hackterm .. " -e sh -c 'frida-compile ; bash'" },
   { "frida-create", hackterm .. " -e sh -c 'frida-create ; bash'" },
-}
-reversingmenu11 = {
   { "frida-discover", hackterm .. " -e sh -c 'frida-discover -h ; bash'" },
   { "frida-join", hackterm .. " -e sh -c 'frida-join ; bash'" },
+}
+reversingmenu11 = {
   { "frida-kill", hackterm .. " -e sh -c 'frida-kill -h ; bash'" },
   { "frida-ls", hackterm .. " -e sh -c 'frida-ls ; bash'" },
   { "frida-ls-devices", hackterm .. " -e sh -c 'frida-ls-devices -h ; bash'" },
@@ -7410,10 +7401,10 @@ reversingmenu11 = {
   { "frida-rm2", hackterm .. " -e sh -c 'frida-rm2 ; bash'" },
   { "frida-trace2", hackterm .. " -e sh -c 'frida-trace2 ; bash'" },
   { "frida2", hackterm .. " -e sh -c 'frida2 ; bash'" },
-}
-reversingmenu12 = {
   { "js-beautify2", hackterm .. " -e sh -c 'js-beautify2 -h ; bash'" },
   { "quickscope", hackterm .. " -e sh -c 'quickscope -h ; bash'" },
+}
+reversingmenu12 = {
   { "sleighc", hackterm .. " -e sh -c 'sleighc ; bash'" },
   { "r2", hackterm .. " -e sh -c 'r2 -h ; bash'" },
   { "r2agent", hackterm .. " -e sh -c 'r2agent -h ; bash'" },
@@ -7432,10 +7423,10 @@ reversingmenu12 = {
   { "r2agent", hackterm .. " -e sh -c 'r2agent -h ; bash'" },
   { "r2pm", hackterm .. " -e sh -c 'r2pm ; bash'" },
   { "r2r", hackterm .. " -e sh -c 'r2r ; bash'" },
-}
-reversingmenu13 = {
   { "radare2", hackterm .. " -e sh -c 'radare2 -h ; bash'" },
   { "radiff2", hackterm .. " -e sh -c 'radiff2 -h ; bash'" },
+}
+reversingmenu13 = {
   { "rafind2", hackterm .. " -e sh -c 'rafind2 -h ; bash'" },
   { "ragg2", hackterm .. " -e sh -c 'ragg2 -h ; bash'" },
   { "rarun2", hackterm .. " -e sh -c 'rarun2 -h ; bash'" },
@@ -7454,10 +7445,10 @@ reversingmenu13 = {
   { "retdec-fileinfo", hackterm .. " -e sh -c 'retdec-fileinfo -h ; bash'" },
   { "retdec-getsig", hackterm .. " -e sh -c 'retdec-getsig -h ; bash'" },
   { "retdec-idr2pat", hackterm .. " -e sh -c 'retdec-idr2pat -h ; bash'" },
-}
-reversingmenu14 = {
   { "retdec-macho-extractor", hackterm .. " -e sh -c 'retdec-macho-extractor -h ; bash'" },
   { "retdec-pat2yara", hackterm .. " -e sh -c 'retdec-pat2yara -h ; bash'" },
+}
+reversingmenu14 = {
   { "retdec-signature-from-library-creator", hackterm .. " -e sh -c 'retdec-signature-from-library-creator -h ; bash'" },
   { "retdec-stacofin", hackterm .. " -e sh -c 'retdec-stacofin -h ; bash'" },
   { "retdec-unpacker", hackterm .. " -e sh -c 'retdec-unpacker -h ; bash'" },
@@ -7476,10 +7467,10 @@ reversingmenu14 = {
   { "swfbbox", hackterm .. " -e sh -c 'swfbbox ; bash'" },
   { "swfc", hackterm .. " -e sh -c 'swfc ; bash'" },
   { "swfdump", hackterm .. " -e sh -c 'swfdump ; bash'" },
-}
-reversingmenu15 = {
   { "swfextract", hackterm .. " -e sh -c 'swfextract ; bash'" },
   { "swfrender", hackterm .. " -e sh -c 'swfrender ; bash'" },
+}
+reversingmenu15 = {
   { "swfstrings", hackterm .. " -e sh -c 'swfstrings ; bash'" },
   { "wav2swf", hackterm .. " -e sh -c 'wav2swf ; bash'" },
   { "udcli", hackterm .. " -e sh -c 'udcli -h ; bash'" },
