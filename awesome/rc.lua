@@ -109,6 +109,9 @@ standartmenu = {
     { "firefox", "firefox" },
     { "explorer", "nemo" },
     { "ranger", terminal .. " -e ranger" },
+    { "notepadqq", "notepadqq" },
+    { "eclipse", "eclipse" },
+    { "visual studio code", "code" },
 }
 optionsmenu = {
     { "wi-fi", terminal .. " -e iwctl" },
