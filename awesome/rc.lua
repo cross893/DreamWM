@@ -61,7 +61,7 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
-hackterm = "kitty"
+hackterm = "xterm -bg black -fg green -fa 'Monospace' -fs 18"
 editor = os.getenv("vim") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -115,11 +115,11 @@ optionsmenu = {
 }
 termmenu = {
     { "kitty", terminal },
-    { "term (grey)", "xterm -bg black -fg grey bash" },
-    { "term (red)", "xterm -bg black -fg red bash" },
-    { "term (green)", "xterm -bg black -fg green bash" },
-    { "term (yellow)", "xterm -bg black -fg yellow bash" },
-    { "term (white)", "xterm -bg black -fg white bash" }
+    { "term (grey)", "xterm -bg black -fg grey -fa 'Monospace' -fs 18 bash" },
+    { "term (red)", "xterm -bg black -fg red -fa 'Monospace' -fs 18 bash" },
+    { "term (green)", "xterm -bg black -fg green -fa 'Monospace' -fs 18 bash" },
+    { "term (yellow)", "xterm -bg black -fg yellow -fa 'Monospace' -fs 18 bash" },
+    { "term (white)", "xterm -bg black -fg white -fa 'Monospace' -fs 18 bash" }
 }
 
 antiforensicmenu = {
