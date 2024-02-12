@@ -7,12 +7,12 @@ then
 	if [ "$(uname -n)" = "archlinux" ]; then
   		wminstall=-1
  		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 8 ]; do
-  			echo "\nDo you wanna install WM? (in developing)"
+  			echo "Do you wanna install WM? (in developing)"
 			read -p "sway - 1, awesome - 2, i3-wm - 3, dwm - 4, hyprland - 5, kde - 6, xfce - 7, gnome - 8, nothing - 0: " wminstall
 		done
   
 		while ! [ "$blackarchpack" = "y" -o "$blackarchpack" = "n" ]; do
-			read -p "\nDo you wanna install blackarch packages? (y/n) " blackarchpack
+			read -p "Do you wanna install blackarch packages? (y/n) " blackarchpack
 		done
 
   		yes | sudo pacman -Suy
@@ -242,12 +242,12 @@ then
 	elif [ "$(uname -n)" = "debian" ]; then
  		wminstall=-1
  		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 5 ]; do
-  			echo "\nDo you wanna install WM? (in developing)"
+  			echo "Do you wanna install WM? (in developing)"
 			read -p "sway - 1, awesome - 2, i3-wm - 3, dwm - 4, hyprland - 5, nothing - 0: " wminstall
 		done
 		
 		while ! [ "$kalitools" = "y" -o "$kalitools" = "n" ]; do
-			read -p "\nDo you wanna install kali linux tools? (y/n) " kalitools
+			read -p "Do you wanna install kali linux tools? (y/n) " kalitools
 		done
 	 	
 		sudo apt-get update -y
