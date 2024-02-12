@@ -175,6 +175,7 @@ then
 		elif [ "$DESKTOP_SESSION" = "awesome" -o  "$wminstall" = "2" ]; then
 			echo "This is a AWESOME in developing" #---------------------------------------------------------------------------------------------------------------------------------
 			yes | sudo pacman -S nemo
+			yes | sudo pacman -S xterm
    
 			mkdir /home/$USER/.config/awesome
    			cp awesome/rc.lua /home/$USER/.config/awesome/rc.lua
