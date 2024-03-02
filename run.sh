@@ -2,9 +2,14 @@
 
 if sudo -v
 then
-
+distr=0
+	while ! [ "$distr" -ge 1 -a "$distr" -le 2 ]; do
+  		echo "What distribution do you have? (in developing)"
+		read -p "Arch - 1, Debian - 2: " wminstall
+	done
+ 
 	### Arch
-	if [ "$(uname -n)" = "archlinux" ]; then
+	if [ "$distr" = "1" ]; then
   		wminstall=-1
  		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 8 ]; do
   			echo "Do you wanna install WM? (in developing)"
@@ -252,7 +257,6 @@ then
 	 		sudo mkdir /root/.local/share/nvim/site/
 	 		sudo mkdir /root/.local/share/nvim/site/autoload/
 	 		sudo cp nvim/plug.vim /root/.local/share/nvim/site/autoload/plug.vim
-	 		
 		fi
   
 		### Install blackarch package
@@ -266,7 +270,7 @@ then
 	
 	
 	### Debian
-	elif [ "$(uname -n)" = "debian" ]; then
+	elif [ "$distr" = "2" ]; then
  		wminstall=-1
  		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 5 ]; do
   			echo "Do you wanna install WM? (in developing)"
@@ -275,6 +279,10 @@ then
 		
 		while ! [ "$kalitools" = "y" -o "$kalitools" = "n" ]; do
 			read -p "Do you wanna install kali linux tools? (y/n) " kalitools
+		done
+  
+		while ! [ "$neovim" = "y" -o "$neovim" = "n" ]; do
+			read -p "Do you wanna install neovim? (y/n) " neovim
 		done
 	 	
 		sudo apt-get update -y
@@ -374,7 +382,28 @@ then
 		sudo cp zsh/zshrc /root/.zshrc
 		cp zsh/p10k.zsh /home/$USER/.p10k.zsh
 		sudo cp zsh/su.p10k.zsh /root/.p10k.zsh
-	 
+
+  		### Install neovim
+		if [ "$neovim" = "y" ]; then
+			sudo apt-get install nvim
+   			mkdir /home/$USER/.config/nvim
+      			cp nvim/init.vim /home/$USER/.config/nvim/init.vim
+   			sudo mkdir /root/.config/nvim
+      			sudo cp nvim/init.vim /root/.config/nvim/init.vim
+	 		mkdir /home/$USER/.local/
+	 		mkdir /home/$USER/.local/share/
+	 		mkdir /home/$USER/.local/share/nvim/
+	 		mkdir /home/$USER/.local/share/nvim/site/
+	 		mkdir /home/$USER/.local/share/nvim/site/autoload/
+	 		cp nvim/plug.vim /home/$USER/.local/share/nvim/site/autoload/plug.vim
+	 		sudo mkdir /root/.local/
+	 		sudo mkdir /root/.local/share/
+	 		sudo mkdir /root/.local/share/nvim/
+	 		sudo mkdir /root/.local/share/nvim/site/
+	 		sudo mkdir /root/.local/share/nvim/site/autoload/
+	 		sudo cp nvim/plug.vim /root/.local/share/nvim/site/autoload/plug.vim
+		fi
+  		
 		### Install kali linux tools
 		if [ "$kalitools" = "y" ]; then
 			echo "This is a kali linux tools in developing" #---------------------------------------------------------------------------------------------------------------------------------
