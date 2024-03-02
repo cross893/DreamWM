@@ -14,6 +14,10 @@ then
 		while ! [ "$blackarchpack" = "y" -o "$blackarchpack" = "n" ]; do
 			read -p "Do you wanna install blackarch packages? (y/n) " blackarchpack
 		done
+  
+		while ! [ "$neovim" = "y" -o "$neovim" = "n" ]; do
+			read -p "Do you wanna install neovim? (y/n) " neovim
+		done
 
   		yes | sudo pacman -Suy
     
@@ -228,7 +232,29 @@ then
 		sudo cp zsh/zshrc /root/.zshrc
 		cp zsh/p10k.zsh /home/$USER/.p10k.zsh
 		sudo cp zsh/su.p10k.zsh /root/.p10k.zsh
-		
+  
+		### Install neovim
+		if [ "$neovim" = "y" ]; then
+			sudo pacman -S nvim
+   			mkdir /home/$USER/.config/nvim
+      			cp nvim/init.vim /home/$USER/.config/nvim/init.vim
+   			sudo mkdir /root/.config/nvim
+      			sudo cp nvim/init.vim /root/.config/nvim/init.vim
+	 		mkdir /home/$USER/.local/
+	 		mkdir /home/$USER/.local/share/
+	 		mkdir /home/$USER/.local/share/nvim/
+	 		mkdir /home/$USER/.local/share/nvim/site/
+	 		mkdir /home/$USER/.local/share/nvim/site/autoload/
+	 		cp nvim/plug.vim /home/$USER/.local/share/nvim/site/autoload/plug.vim
+	 		sudo mkdir /root/.local/
+	 		sudo mkdir /root/.local/share/
+	 		sudo mkdir /root/.local/share/nvim/
+	 		sudo mkdir /root/.local/share/nvim/site/
+	 		sudo mkdir /root/.local/share/nvim/site/autoload/
+	 		sudo cp nvim/plug.vim /root/.local/share/nvim/site/autoload/plug.vim
+	 		
+		fi
+  
 		### Install blackarch package
 		if [ "$blackarchpack" = "y" ]; then
 			curl -O https://blackarch.org/strap.sh
