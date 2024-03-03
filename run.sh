@@ -23,6 +23,10 @@ distr=0
 		while ! [ "$neovim" = "y" -o "$neovim" = "n" ]; do
 			read -p "Do you wanna install neovim? (y/n) " neovim
 		done
+  
+		while ! [ "$devpack" = "y" -o "$devpack" = "n" ]; do
+			read -p "Do you wanna install developing package? (y/n) " devpack
+		done
 
   		yes | sudo pacman -Suy
     
@@ -240,7 +244,7 @@ distr=0
   
 		### Install neovim
 		if [ "$neovim" = "y" ]; then
-			sudo pacman -S nvim
+			yes | sudo pacman -S nvim
    			mkdir /home/$USER/.config/nvim
       			cp nvim/init.vim /home/$USER/.config/nvim/init.vim
    			sudo mkdir /root/.config/nvim
@@ -259,6 +263,15 @@ distr=0
 	 		sudo cp nvim/plug.vim /root/.local/share/nvim/site/autoload/plug.vim
 		fi
   
+		### Install dev package
+		if [ "$devpack" = "y" ]; then
+  			yes | sudo pacman -S openal
+     			yes | sudo pacman -S glew
+			yes | sudo pacman -S glfw-x11
+   			yes | sudo pacman -S libsndfile
+      			yes | sudo pacman -S mpg123
+  		fi
+    
 		### Install blackarch package
 		if [ "$blackarchpack" = "y" ]; then
 			curl -O https://blackarch.org/strap.sh
