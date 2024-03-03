@@ -267,7 +267,7 @@ distr=0
 		if [ "$devpack" = "y" ]; then
   			yes | sudo pacman -S openal
      			yes | sudo pacman -S glew
-			yes | sudo pacman -S glfw-x11
+			yes | sudo pacman -S glfw
    			yes | sudo pacman -S libsndfile
       			yes | sudo pacman -S mpg123
   		fi
