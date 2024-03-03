@@ -270,6 +270,7 @@ distr=0
 			yes | sudo pacman -S glfw
    			yes | sudo pacman -S libsndfile
       			yes | sudo pacman -S mpg123
+      			yes | sudo pacman -S lib32-glibc
   		fi
     
 		### Install blackarch package
