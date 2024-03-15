@@ -397,9 +397,18 @@ distr=0
 		cp zsh/p10k.zsh /home/$USER/.p10k.zsh
 		sudo cp zsh/su.p10k.zsh /root/.p10k.zsh
 
+  		sudo apt install build-essential -y
+    		sudo apt install libopenal-dev -y
+      		sudo apt install libglew-dev -y
+      		sudo apt install libglfw3-dev -y
+		sudo apt install libsndfile1-dev -y
+      		sudo apt install libmpg123-dev -y
+		sudo apt install cmake -y
+  		sudo apt install clang -y
+
   		### Install neovim
 		if [ "$neovim" = "y" ]; then
-			sudo apt-get install nvim
+			sudo apt-get install neovim -y
    			mkdir /home/$USER/.config/nvim
       			cp nvim/init.vim /home/$USER/.config/nvim/init.vim
    			sudo mkdir /root/.config/nvim
