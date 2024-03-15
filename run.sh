@@ -403,6 +403,7 @@ distr=0
       		sudo apt install libglfw3-dev -y
 		sudo apt install libsndfile1-dev -y
       		sudo apt install libmpg123-dev -y
+		sudo apt-get install libsdl2-dev -y
 		sudo apt install cmake -y
   		sudo apt install clang -y
 
