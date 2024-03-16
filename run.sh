@@ -404,8 +404,12 @@ distr=0
 		sudo apt install libsndfile1-dev -y
       		sudo apt install libmpg123-dev -y
 		sudo apt-get install libsdl2-dev -y
-		sudo apt install cmake -y
-  		sudo apt install clang -y
+  
+		sudo apt-get install cmake -y
+  		sudo apt-get install clang -y
+		sudo apt-get install gcc-12 -y
+  		sudo apt-get install g++-12 -y
+		sudo apt-get install clang-16 -y
 
   		### Install neovim
 		if [ "$neovim" = "y" ]; then
