@@ -287,7 +287,7 @@ distr=0
 	elif [ "$distr" = "2" ]; then
  		wminstall=-1
  		while ! [ "$wminstall" -ge 0 -a "$wminstall" -le 5 ]; do
-  			echo "Do you wanna install WM? (in developing)"
+            echo "Do you wanna install WM? (in developing)"
 			read -p "sway - 1, awesome - 2, i3-wm - 3, dwm - 4, hyprland - 5, nothing - 0: " wminstall
 		done
 		
@@ -297,6 +297,10 @@ distr=0
   
 		while ! [ "$neovim" = "y" -o "$neovim" = "n" ]; do
 			read -p "Do you wanna install neovim? (y/n) " neovim
+		done
+  
+		while ! [ "$qemu" = "y" -o "$qemu" = "n" ]; do
+			read -p "Do you wanna install qemu? (y/n) " neovim
 		done
 	 	
 		sudo apt-get update -y
@@ -410,6 +414,12 @@ distr=0
 		sudo apt-get install gcc-12 -y
   		sudo apt-get install g++-12 -y
 		sudo apt-get install clang-16 -y
+
+		### Install qemu
+  		if [ "$qemu" = "y" ]; then
+		sudo apt-get installqemu-utils qemu-system-x86 qemu-system-gui -y
+  		sudo apt-get install libvirt-daemon-system libvirt-clients bridge-utils virt-manager -y
+    		fi
 
   		### Install neovim
 		if [ "$neovim" = "y" ]; then
