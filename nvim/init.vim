@@ -20,5 +20,3 @@ nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
-
-source /home/a_user_581397/.local/share/nvim/plugged/awesome-vim-colorschemes/colors/one-dark.vim
