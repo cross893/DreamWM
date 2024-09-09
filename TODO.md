@@ -9,7 +9,7 @@
 - [ ] Fix the script
 
 ### Other system
-- [ ] Add configure for other distributions (Debian, etc.)
+- [X] Add configure for other distributions (Debian, etc.)
 - [ ] Add other WM (dwm, i3-wm, etc.)
 
 - [ ] Split the run.sh file into different files
