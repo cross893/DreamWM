@@ -5,7 +5,7 @@ then
 distr=0
 	while ! [ "$distr" -ge 1 -a "$distr" -le 2 ]; do
   		echo "What distribution do you have? (in developing)"
-		read -p "Arch - 1, Debian - 2: " wminstall
+		read -p "Arch - 1, Debian - 2: " distr
 	done
  
 	### Arch
