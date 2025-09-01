@@ -111,7 +111,7 @@ mode "resize" {
 bindsym --to-code $mod+r mode "resize"
 
 # Input/Output конфигурация
-output * bg /usr/share/backgrounds/sway/Wallpaper/wallpaper5.jpg fill
+#output * bg /usr/share/backgrounds/sway/Wallpaper/wallpaper5.jpg fill
 input * {
     xkb_layout us,ru
     xkb_options grp:alt_shift_toggle
