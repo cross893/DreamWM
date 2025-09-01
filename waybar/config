@@ -68,7 +68,7 @@
     "custom/wmname": {
         "format": "",
         "tooltip": false,
-	"on-click": "wmname LG3D",
+	"on-click": "dmenu_path | wofi | xargs swaymsg exec --",
     },
     "hyprland/workspaces": {
         "format": "{icon}",
