@@ -181,8 +181,8 @@ for_window [app_id="cmake-gui"] floating enable
 
 # Автостарт
 exec mako
-exec kitty --hold neofetch
-exec kitty
+exec $term --hold screenfetch
+exec $term
 
 #exec swayidle -w \ timeout 300 'swaylock -f -c 000000' \ timeout 600 'swaymsg "output * dpms off"' \ resume 'swaymsg "output * dpms on"' \ before-sleep 'swaylock -f -c 000000'
 
