@@ -2,7 +2,7 @@
     "layer": "top",
     "position": "top",
     "height": 33,
-    "width": 1800,
+    "width": 0,
     "margin": "3, 0, 2, 0",
     // Choose the order of the modules
     "modules-left": [
