@@ -40,6 +40,7 @@ distr=0
 		yes | sudo pacman -S firefox
 		yes | sudo pacman -S gparted
 		yes | sudo pacman -S notepadqq
+		yes | sudo pacman -S screenfetch
 
 		if [ "$wminstall" = "1" ]; then #---------------------------------------------------------------------------------------------------------------------------------
 			yes | sudo pacman -S mesa
