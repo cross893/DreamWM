@@ -115,7 +115,7 @@ distr=0
 			yes | sudo pacman -S plasma
    			sudo systemctl enable sddm
 
-      			### Install sound
+      		### Install sound
 			yes | sudo pacman -S alsa-utils
 			yes | sudo pacman -S alsa-plugins
    
