@@ -137,7 +137,7 @@ distr=0
    			yes | sudo pacman -S sddm
    			sudo systemctl enable sddm
 
-      			### Install sound
+      		### Install sound
 			yes | sudo pacman -S alsa-utils
 			yes | sudo pacman -S alsa-plugins
    
@@ -159,7 +159,7 @@ distr=0
    			yes | sudo pacman -S gdm
    			sudo systemctl enable gdm
 
-      			### Install sound
+      		### Install sound
 			yes | sudo pacman -S alsa-utils
 			yes | sudo pacman -S alsa-plugins
 		fi
@@ -247,9 +247,9 @@ distr=0
 		if [ "$neovim" = "y" ]; then
 			yes | sudo pacman -S nvim
    			mkdir /home/$USER/.config/nvim
-      			cp nvim/init.vim /home/$USER/.config/nvim/init.vim
+      		cp nvim/init.vim /home/$USER/.config/nvim/init.vim
    			sudo mkdir /root/.config/nvim
-      			sudo cp nvim/init.vim /root/.config/nvim/init.vim
+      		sudo cp nvim/init.vim /root/.config/nvim/init.vim
 	 		mkdir /home/$USER/.local/
 	 		mkdir /home/$USER/.local/share/
 	 		mkdir /home/$USER/.local/share/nvim/
@@ -267,11 +267,11 @@ distr=0
 		### Install dev package
 		if [ "$devpack" = "y" ]; then
   			yes | sudo pacman -S openal
-     			yes | sudo pacman -S glew
+     		yes | sudo pacman -S glew
 			yes | sudo pacman -S glfw
    			yes | sudo pacman -S libsndfile
-      			yes | sudo pacman -S mpg123
-      			yes | sudo pacman -S lib32-glibc
+      		yes | sudo pacman -S mpg123
+      		yes | sudo pacman -S lib32-glibc
   		fi
     
 		### Install blackarch package
